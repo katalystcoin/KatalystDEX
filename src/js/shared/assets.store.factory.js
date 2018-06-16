@@ -4,12 +4,9 @@
     // TODO : move to the future `appState` service.
 
     var predefinedAssets = [
-        Currency.BTC,
-        Currency.USD,
-        Currency.EUR,
-        Currency.CNY,
-        Currency.WCT,
-        Currency.MRT
+        Currency.KDEX,
+        Currency.CKR,
+        Currency.SGD
     ];
 
     angular
@@ -40,7 +37,7 @@
                         })
                         .then(apiService.address.balance.bind(apiService.address, self.address))
                         .then(function (response) {
-                            self.balances[Currency.WAVES.id] = Money.fromCoins(response.balance, Currency.WAVES);
+                            self.balances[Currency.KDEX.id] = Money.fromCoins(response.balance, Currency.KDEX);
                         });
                 };
 
