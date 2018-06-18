@@ -378,7 +378,6 @@ module.exports = function (grunt) {
                 dest: 'distr/devel/js/bundle.js'
             }
         },
-        
         uglify: {
             options: {
                 mangle: false
@@ -395,7 +394,6 @@ module.exports = function (grunt) {
                 }
             }
         },
-
         clean: ['build/**', 'distr/**'],
         copy: {
             options: {

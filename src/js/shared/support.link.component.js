@@ -9,6 +9,6 @@
         .module('app.shared')
         .component('wavesSupportLink', {
             controller: SupportLinkController,
-            template: '<a class="supLink" href="http://' + url + '" target="_blank">' + url + '</a>'
+            template: '<a href="http://' + url + '" target="_blank">' + url + '</a>'
         });
 })();

@@ -6,9 +6,7 @@
     var predefinedAssets = [
         Currency.KDEX,
         Currency.CKR,
-        Currency.SGD,
-        // Currency.HOTX
-
+        Currency.SGD
     ];
 
     angular

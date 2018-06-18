@@ -1,9 +1,9 @@
 @import "../variables";
 
-@color-favorite-still: @color-turquoise;
-@color-favorite-hover: saturate(@color-mid-blue, 20%);
-@color-traded-still: @color-turquoise;
-@color-traded-hover: saturate(@color-mid-blue, 20%);
+@color-favorite-still: @color-soft-orange;
+@color-favorite-hover: saturate(@color-soft-orange, 20%);
+@color-traded-still: @color-waves-blue-temp;
+@color-traded-hover: saturate(@color-waves-blue-temp, 20%);
 
 waves-dex-favorites {
   display: block;
@@ -18,7 +18,6 @@ waves-dex-favorites {
     display: flex;
     flex-wrap: wrap;
     align-content: space-between;
-    color: @color-white;
 
     .pair,
     .action {
@@ -41,16 +40,10 @@ waves-dex-favorites {
     .action {
       font-weight: bold;
       background: lighten(@color-favorite-still, 15%);
-      color: @color-white;
+      color: @color-grey;
       &:hover {
         background: lighten(@color-favorite-hover, 15%);
       }
     }
   }
-}
-
-
-.imgCoin {
-  width: 40px;
-  height: 40px;
 }

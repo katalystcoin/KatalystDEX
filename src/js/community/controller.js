@@ -48,10 +48,3 @@
         .module('app.community')
         .controller('communityController', CommunityController);
 })();
-
-angular.module('sortApp', [])
-
-.controller('mainController', function($scope) {
-    $scope.sortType     = 'height'; // set the default sort type
-    $scope.sortReverse  = false;  // set the default sort order
-});

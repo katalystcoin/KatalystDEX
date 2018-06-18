@@ -13,7 +13,7 @@
 }
 
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: @font-wesli;
   color: @color-darkest-grey;
   background: @color-white;
   overflow: hidden;
@@ -78,7 +78,6 @@ body {
 .divider-2 {
   display: inline-block;
   width: 1rem;
-  margin: 3px;
 }
 
 #walletSeed,
@@ -91,7 +90,7 @@ body {
 }
 
 .fontBold {
-  font-family: 'Lato', sans-serif;
+  font-family: @font-sparta;
   font-size: .9rem;
   color: @color-darkest-grey;
 }
@@ -208,7 +207,7 @@ body {
 }
 
 .confirmation-value {
-  font-family: 'Lato', sans-serif;
+  font-family: @font-sparta;
   font-size: .9rem;
 }
 
@@ -233,19 +232,19 @@ body {
 }
 
 .wavesTable thead {
-  background-color: @color-header;
-  border: 0 solid @color-header-border;
+  background-color: @color-navy-blue;
+  border: 0 solid @color-almost-white;
   text-align: center;
   font-size: 1.12rem;
   color: @color-white;
 }
 
 .wavesTable tbody tr:nth-child(odd) {
-  background-color: @color-table-row-odd;
+  background-color: @color-almost-white;
 }
 
 .wavesTable tbody tr:nth-child(even) {
-  background-color: @color-table-row-even;
+  background-color: @color-white;
 }
 
 .wavesTable td {
@@ -266,12 +265,12 @@ body {
 
 .wavesTable tbody tr:not(#mBB-token .wavesTable-hover tbody tr) {
   color: @color-darkest-grey;
-  font-family: 'Lato', sans-serif;
+  font-family: @font-lekton;
 }
 
 .wavesTable input[type="search"],
 .paymentForm input[type="search"] {
-  font-family: 'Lato', sans-serif;
+  font-family: @font-wesli;
   font-size: 1rem;
   padding: .3rem
 }
@@ -281,7 +280,7 @@ body {
 
 #mBB-portfolio .wavesTable tbody tr {
   color: @color-darkest-grey;
-  font-family: 'Lato', sans-serif;
+  font-family: @font-lekton;
 }
 
 #latestBlocksTable .clipSpan:after {
@@ -311,7 +310,7 @@ body {
 #wallet-transaction-history tbody,
 #latestBlocksUnconfirmed,
 #latestBlocksTable {
-  font-family: 'Lato', sans-serif;
+  font-family: @font-lekton;
 }
 
 
@@ -360,7 +359,7 @@ table.bitcoin-requisites {
       margin-right: 15px;
       padding: 2px 4px;
       background: @color-almost-white;
-      font-family: 'Lato', sans-serif;
+      font-family: @font-lekton;
     }
   }
 }
@@ -371,26 +370,4 @@ table.bitcoin-requisites {
   border-radius: 5px;
   background: #c21208;
   color: #fff;
-}
-
-.navCon{
-  background: #173553;
-}
-
-.container2{
-  font-family: 'Lato', sans-serif;
-  font-size: 16px;
-  text-align: center;
-  text-transform: capitalize;
-  overflow-wrap: break-word;
-  color: #0b2a4a;
-  
-  align-content: center;
-
-  border: 2px solid #ced3d9;
-    
-  background-color: #ffffff;
-  
-  width: 200px;
-  height:300px;
 }

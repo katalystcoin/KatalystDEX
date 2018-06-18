@@ -42,8 +42,6 @@
         ctrl.showProfileDialog = showProfileDialog;
         ctrl.backup = backup;
 
-        ctrl.showEmailUpdateDialog = showEmailUpdateDialog;
-
         function showAddressQr() {
             dialogService.open('#address-qr-modal');
         }
@@ -79,11 +77,6 @@
                 applicationContext.blockHeight = response.height;
             });
         }
-
-        function showEmailUpdateDialog() {
-            dialogService.open('#feat-not-active');
-        }
-
     }
 
     MainMenuController.$inject = ['$scope', '$interval', 'navigation.events', 'applicationContext',

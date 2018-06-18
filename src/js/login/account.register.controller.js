@@ -12,9 +12,6 @@
                 walletName: {
                     maxlength: WALLET_NAME_MAXLENGTH
                 },
-                walletEmail:{
-                    required: true
-                },
                 walletPassword: {
                     required: true,
                     minlength: 8,
@@ -28,9 +25,6 @@
                 walletName: {
                     maxlength: 'A wallet name is too long. Maximum name length is ' +
                         WALLET_NAME_MAXLENGTH + ' characters'
-                },
-                walletEmail: {
-                    required: 'An email address is required for notification of transactions.',
                 },
                 walletPassword: {
                     required: 'A password is required to store your seed safely',
