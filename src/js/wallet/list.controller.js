@@ -36,6 +36,11 @@
                 balance: new Money(0, Currency.SGD),
                 depositWith: Currency.SGD
             }
+            // TESTING:
+            // {
+            //     balance: new Money(0, Currency.IKI),
+            //     depositWith: Currency.IKI
+            // }
 
         ];
 

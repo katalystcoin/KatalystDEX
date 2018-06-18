@@ -3,18 +3,61 @@
   <table>
     <thead>
       <tr>
-        <td>DATE</td>
-        <td>TYPE</td>
-        <td>NAME</td>
-        <td>SENDER</td>
-        <td>RECIPIENT</td>
-        <td>FEE</td>
-        <td>UNITS</td>
-        <td></td>
+        <td>
+          <a href="#" ng-click="sortType = 'date'; sortReverse = !sortReverse">
+            Date 
+            <!-- <span class="fa fa-caret-down"></span> -->
+            <span ng-show="sortType == 'date' && !sortReverse" class="fa fa-caret-up"></span>
+            <span ng-show="sortType == 'date' && sortReverse" class="fa fa-caret-down"></span>
+          </a>
+        </td>
+        <td>
+          <a href="#" ng-click="sortType = 'type'; sortReverse = !sortReverse">
+          Type 
+            <span ng-show="sortType == 'type' && !sortReverse" class="fa fa-caret-up"></span>
+            <span ng-show="sortType == 'type' && sortReverse" class="fa fa-caret-down"></span>
+          </a>
+        </td>
+        <td>
+          <a href="#" ng-click="sortType = 'name'; sortReverse = !sortReverse">
+          Name 
+            <span ng-show="sortType == 'name' && !sortReverse" class="fa fa-caret-up"></span>
+            <span ng-show="sortType == 'name' && sortReverse" class="fa fa-caret-down"></span>
+          </a>
+        </td>   
+        <td>
+          <a href="#" ng-click="sortType = 'sender'; sortReverse = !sortReverse">
+            Sender 
+            <!-- <span class="fa fa-caret-down"></span> -->
+            <span ng-show="sortType == 'sender' && !sortReverse" class="fa fa-caret-up"></span>
+            <span ng-show="sortType == 'sender' && sortReverse" class="fa fa-caret-down"></span>
+          </a>
+        </td>
+        <td>
+          <a href="#" ng-click="sortType = 'recipient'; sortReverse = !sortReverse">
+          Recipient 
+            <span ng-show="sortType == 'recipient' && !sortReverse" class="fa fa-caret-up"></span>
+            <span ng-show="sortType == 'recipient' && sortReverse" class="fa fa-caret-down"></span>
+          </a>
+        </td>
+        <td>
+          <a href="#" ng-click="sortType = 'fee'; sortReverse = !sortReverse">
+          Fee 
+            <span ng-show="sortType == 'fee' && !sortReverse" class="fa fa-caret-up"></span>
+            <span ng-show="sortType == 'fee' && sortReverse" class="fa fa-caret-down"></span>
+          </a>
+        </td>       
+        <td>
+          <a href="#" ng-click="sortType = 'units'; sortReverse = !sortReverse">
+          Units 
+            <span ng-show="sortType == 'units' && !sortReverse" class="fa fa-caret-up"></span>
+            <span ng-show="sortType == 'units' && sortReverse" class="fa fa-caret-down"></span>
+          </a>
+        </td>        
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="tx in $ctrl.transactions | orderBy:'timestamp':true | limitTo:$ctrl.limitTo | transaction track by tx.timestamp"
+      <tr ng-repeat="tx in $ctrl.transactions | orderBy:sortType:sortReverse | limitTo:$ctrl.limitTo | transaction track by tx.timestamp"
           ng-class="{'tx-unc': tx.unconfirmed, 'tx-in': !tx.formatted.isOutgoing, 'tx-out': tx.formatted.isOutgoing}">
         <td>{{tx.formatted.datetime}}</td>
         <td>{{tx.formatted.type}}</td>

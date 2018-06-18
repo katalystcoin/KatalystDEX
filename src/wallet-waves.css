@@ -1,0 +1,104 @@
+
+k-asset {
+    box-sizing: border-box;
+    min-height: 182px;
+    flex-basis: calc(25% - 10px);
+    max-width: calc(25% - 10px);
+    border: 1px solid #eaeaea;
+    border-radius: 4px;
+    background-color: #fff;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    overflow: hidden;
+    margin: 5px
+}
+
+@media screen and (max-width:1300px) {
+    k-asset {
+        flex-basis: calc(33.3% - 10px);
+        max-width: calc(33.3% - 10px)
+    }
+}
+
+@media screen and (max-width:1024px) {
+    k-asset {
+        flex-basis: calc(50% - 10px);
+        max-width: calc(50% - 10px)
+    }
+}
+
+@media screen and (max-width:560px) {
+    k-asset {
+        flex-basis: calc(100% - 10px);
+        max-width: calc(100% - 10px)
+    }
+}
+
+k-asset>div {
+    display: flex;
+    flex-direction: column;
+    height: 100%
+}
+
+k-asset .info {
+    cursor: pointer;
+    height: 101px
+}
+
+k-asset:hover .settings {
+    display: flex
+}
+
+k-asset k-asset-logo {
+    margin-right: 7px
+}
+
+k-asset .balance {
+    margin: 6px 0 auto 0;
+    font-weight: normal
+}
+
+k-asset .balance k-balance>span {
+    word-wrap: break-word
+}
+
+k-asset .balance .decimal {
+    font-family: 'Roboto-Light', sans-serif
+}
+
+k-asset .name {
+    font-weight: 500;
+    font-size: 17px;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+    align-items: center
+}
+
+k-asset hr {
+    border: 0;
+    width: 100%;
+    margin: 8px 0;
+    border-bottom: 1px dashed #e2e2e2
+}
+
+k-asset .footer {
+    color: #9ba6b2;
+    display: flex;
+    white-space: nowrap;
+    flex-wrap: nowrap
+}
+
+k-asset .footer .btn-icon {
+    display: inline-block;
+    margin-top: 10px;
+    margin-right: 20px;
+    cursor: pointer;
+    font-size: 15px
+}
+
+k-asset .footer .btn-icon:hover {
+    color: #000
+}

@@ -25,6 +25,9 @@
   <link rel="stylesheet" href="../bower_components/angular/angular-csp.css">
   <link rel="stylesheet" href="../bower_components/angular-material/angular-material.css">
   <link rel="stylesheet" href="../distr/devel/css/style.css">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+  <link href="css/bootstrap-4.0.0.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
   <!-- CSS END -->
   <link href="img/favicon.ico" type="image/x-icon" rel="shortcut icon">
 </head>
@@ -36,7 +39,7 @@
   <div id="logo-container-centered" class="centerIt">
     <div id="logoo">
       <img id="logo-spin" src="img/logo-spin.svg" />
-      <p id="networkCheck">Loading...</p>
+      <p id="networkCheck" class="turquoiseWord">Loading...</p>
     </div>
   </div>
 </div>
@@ -46,9 +49,11 @@
   <table id="lockscreenTable">
 
     <thead>
-    <div id="logoNversion">
-      <img src="img/topleftlogo.svg" style="width: 80%; height: 80%" />
-      <p ng-class='{testnet: isTestnet()}'>{{::home.title}} <span class="wlcversion">{{::home.version}}</span></p>
+    <div id="logoNversion" style="height: 30vh">
+      <img src="img/wB-bg-KATALYST.svg" style="width: 100%; height: 100%"  class="centerizedImg"/>
+      <div class="centerizedText">
+      <p class="centerizedText" ng-class='{testnet: isTestnet()}'>{{::home.title}} <span class="wlcversion">{{::home.version}}</span></p>
+      </div>
     </div>
     </thead>
 
@@ -57,22 +62,23 @@
       <td>
         <!-- Accounts -->
         <div id="accounts">
-          <h2 id="AccHeader">{{accounts.caption}}</h2>
+          <h2 id="AccHeader">{{accounts.caption}}</h2><hr>
           <div class="wavesAccounts" ng-controller="accountListController as list" ng-show="accounts.mode === 'list'">
-            <p class="loginAccountDiv" ng-repeat="account in list.accounts track by $index">
+            <p class="loginAccountDiv bgNew" ng-repeat="account in list.accounts track by $index">
                                     <span class="loginAccount fade" tooltipster tooltip-theme="tooltipster-theme1" title="Log into this account." ng-click="list.signIn(account)"> <br/>
                                         <b>{{::account.name}}</b> <span class="divider-1"></span> <small>{{::account.address}}</small>
                                     </span>
-              <span class="clipSpan" tooltipster tooltip-theme="tooltipster-theme1" ngclipboard title="Copy this address to the clipboard." data-clipboard-text="{{::account.address}}" ngclipboard-success="clipboardOk()"></span>
-              <span class="divider-1"></span>
-              <button class="removeAccount wButtonAlt fade" tooltipster tooltip-theme="tooltipster-theme1" title="Remove this account from the list." ng-click="list.showRemoveWarning($index)">
+              <span class="clipSpan" tooltipster tooltip-theme="tooltipster-theme4" ngclipboard title="Copy this address to the clipboard." data-clipboard-text="{{::account.address}}" ngclipboard-success="clipboardOk()"></span>
+              <span class="divider-1 space"></span>
+              <button class="removeAccount wButtonAlt fade buttonNew" tooltipster tooltip-theme="tooltipster-theme1" title="Remove this account from the list." ng-click="list.showRemoveWarning($index)">
                 <span class="wButton-icon"><img src="img/wIcon_x.svg"></span>REMOVE
               </button>
             </p>
+            <br>
 
-            <button id="import_account" class="wButton fade" tooltipster tooltip-theme="tooltipster-theme1" title="Click here to import an existing account." ng-click="list.importAccount()">IMPORT ACCOUNT</button>
+            <button id="import_account" class="wButton fade buttonNew" tooltipster tooltip-theme="tooltipster-theme1" title="Click here to import an existing account." ng-click="list.importAccount()">IMPORT ACCOUNT</button>
             <span class="divider-1"></span>
-            <button id="create_account" class="wButton fade" tooltipster tooltip-theme="tooltipster-theme1" title="Click here to create a brand new account." ng-click="list.createAccount()">NEW ACCOUNT</button>
+            <button id="create_account" class="wButton fade buttonNew" tooltipster tooltip-theme="tooltipster-theme1" title="Click here to create a brand new account." ng-click="list.createAccount()">NEW ACCOUNT</button>
             <br/>
 
             <!-- Remove Account popup -->
@@ -86,10 +92,10 @@
           </div>
 
           <!-- Seed input -->
-          <div id="create-seed" ng-controller="accountSeedController as vm" ng-show="accounts.mode === 'create-seed'">
+          <div id="create-seed" class="turquoiseWord" ng-controller="accountSeedController as vm" ng-show="accounts.mode === 'create-seed'">
             <form id="account-seed-form" name="accountSeedForm" ng-submit="vm.checkSeedAndRegister(accountSeedForm)" novalidate ng-validate="vm.validationOptions">
 
-              <button id="generateRandomSeed" class="wButton fade" ng-click="vm.generateSeed()" type="button">GENERATE NEW SEED</button>
+              <button id="generateRandomSeed" class="wButton fade buttonNew" ng-click="vm.generateSeed()" type="button">GENERATE NEW SEED</button>
               <br/><br/>
               <div class="form-field">
                 <label for="walletSeed">WALLET SEED</label>
@@ -106,14 +112,14 @@
                   <span>{{vm.displayAddress}}</span>
                 </div>
               </div>
-              <button class="wButton fade" type="submit">REGISTER ACCOUNT</button>
+              <button class="wButton fade buttonNew" type="submit">REGISTER ACCOUNT</button>
               <span class="divider-2"></span>
-              <button class="wButton fade" type="reset" ng-click="vm.back()">BACK</button>
+              <button class="wButton fade buttonNew" type="reset" ng-click="vm.back()">BACK</button>
 
               <div id="seed-whitespace-popup" waves-dialog on-dialog-ok="vm.registerAccount()" closeable="false" ok-button-caption="PROCEED">
                 <h2 class="sectionHeader">SEED NOTICE</h2>
                 <p class="dialog-text">Your wallet seed contains one or more trailing whitespace characters.</p>
-                <p class="dialog-text">A seed with a whitespace at the end and a seed without one are different, and will result in different addresses generated.</p>
+                <p class="dialog-text">A zseed with a whitespace at the end and a seed without one are different, and will result in different addresses generated.</p>
                 <p class="dialog-text">It is strongly recommended that you avoid trailing whitespaces in the seed. If you understand the implications of including a trailing whitespace
                   in your seed, press <b>PROCEED</b>. Press <b>CANCEL</b> or close the dialog box to edit your seed.<br/></p>
               </div>
@@ -133,20 +139,21 @@
 
           <!-- store account on the current device -->
           <div id="register" ng-controller="accountRegisterController as vm" ng-show="accounts.mode === 'register'">
-            <form id="register-form" name="registerForm" novalidate ng-submit="vm.saveAccountAndSignIn(registerForm)" ng-validate="vm.validationOptions">
-              <div class="wPop-content">
-                <label for="readonlySeed">WALLET SEED</label>
-                <br/>
-                <textarea id="readonlySeed" rows="4" class="wInput" ng-model="vm.seed" ng-model-options="{ getterSetter: true }" readonly></textarea>
-                <br/><br/>
+            
+<form id="register-form" name="registerForm" novalidate="novalidate" ng-submit="vm.saveAccountAndSignIn(registerForm)" ng-validate="vm.validationOptions" class="ng-pristine ng-isolate-scope ng-valid ng-valid-required ng-valid-email" method="post">
+              <div class="wPop-content turquoiseWord">
+                <label for="readonlySeed">WALLET SEED</label><br>
+                
+                <textarea id="readonlySeed" rows="4" class="wInput ng-pristine ng-untouched ng-valid ng-not-empty" ng-model="vm.seed" ng-model-options="{ getterSetter: true }" readonly="" aria-invalid="false" style=""></textarea>
+                <br><br>
                 <div>ADDRESS
-                  <br/>
-                  <span>{{accounts.displayAddress}}</span>
+                  <br>
+                  <span class="ng-binding">3N1hBfkh8DiRDrqZSCNb9sbf1muwKuExfQ2</span>
                 </div>
-                <br/>
+                <br>
 
                 <div class="form-field">
-                  <label for="walletName">
+<!--                   <label for="walletName">
                     NAME<span class="infoSpan" tooltipster tooltip-theme="tooltipster-theme1" tooltip-html title="It is possible to assign a name to your account(s)
                                                 <br/>
                                                 in order to make them more memorable, feel
@@ -156,13 +163,26 @@
                                                 <i>NOTE: This is optional, the accounts do not forcefully
                                                 <br/>
                                                 need to have assigned a name.</i>"></span>
-                    <br/>
-                  </label>
-                  <input type="text" id="walletName" name="walletName" class="wInput" ng-model="vm.name" focus-me="accounts.mode === 'register'"/>
+                    
+                  </label> -->
+                  <input type="text" placeholder="Name" id="walletName" name="walletName" class="wInput ng-pristine ng-valid ng-empty ng-touched" ng-model="vm.name" focus-me="accounts.mode === 'register'" aria-invalid="false" style="">
+                </div><br>
+<!-- start of wallet email. just a placeholder field now. ng-model="vm.email" // just a dummy for now... TEMPORARILY DISABLED-->
+                 <!-- <div class="form-field"> -->
+<!--                   <label for="walletEmail">
+                    E-MAIL<span class="infoSpan" tooltipster tooltip-theme="tooltipster-theme1" tooltip-html title="Just a placeholder field for now"></span>
+                    
+                  </label> -->
+
+
+<!--                   <input type="email" placeholder="Email" id="walletEmail" name="walletEmail" class="wInput ng-pristine ng-untouched ng-empty ng-valid ng-valid-required ng-valid-email" ng-model="vm.email" ng-required="required" aria-invalid="false">
                 </div>
-                <br/>
+              <br> -->
+
+<!-- end of wallet email -->
+                
                 <div class="form-field">
-                  <label for="walletPassword">
+<!--                   <label for="walletPassword">
                     PASSWORD<span class="infoSpan" tooltipster tooltip-theme="tooltipster-theme1" tooltip-html title="Used to encrypt your wallet seed, the password
                                                 <br/>
                                                 will be prompted at the time of login.
@@ -170,27 +190,31 @@
                                                 It is imperative that the user keeps it in a safe
                                                 <br/>
                                                 place at all times."></span>
-                  </label>
-                  <br/>
-                  <input type="password" id="walletPassword" name="walletPassword" class="wInput" ng-model="vm.password"/>
+                  </label> -->
+                  
+                  <input type="password" placeholder="Password" id="walletPassword" name="walletPassword" class="wInput ng-pristine ng-untouched ng-valid ng-empty" ng-model="vm.password" aria-invalid="false">
                 </div>
-                <br/>
+                <br>
                 <div class="form-field">
-                  <label for="walletPasswordConfirm">REPEAT PASSWORD</label>
-                  <br/>
-                  <input type="password" id="walletPasswordConfirm" name="walletPasswordConfirm" class="wInput" ng-model="vm.confirmPassword"/>
+<!--                   <label for="walletPasswordConfirm">REPEAT PASSWORD</label> -->
+                  
+                  <input type="password" placeholder="Repeat Password" id="walletPasswordConfirm" name="walletPasswordConfirm" class="wInput ng-pristine ng-untouched ng-valid ng-empty" ng-model="vm.confirmPassword" aria-invalid="false">
                 </div>
-                <br/>
+                <br>
 
-                <button class="wButton fade" type="submit">REGISTER</button>
+                <button class="wButton fade buttonNew" type="submit">REGISTER</button>
                 <span class="divider-2"></span>
-                <button class="wButton fade" type="reset" ng-click="vm.cancel()">CANCEL</button>
+                <button class="wButton fade buttonNew" type="reset" ng-click="vm.cancel()">CANCEL</button>
               </div>
             </form>
+
+
+
+
           </div>
           <!-- log in to selected account -->
           <div id="account-login" ng-controller="accountLoginController as vm" ng-show="accounts.mode === 'login'">
-            <form id="login-form">
+            <form id="login-form" class="bgNew">
               <div>ACCOUNT
                 <br/>
                 <span>{{accounts.displayAddress}}</span>
@@ -203,9 +227,9 @@
               <input type="password" id="accountPassword" class="wInput" ng-model="vm.password" focus-me="accounts.mode === 'login'"/>
               <br/><br/>
 
-              <button class="wButton fade" ng-click="vm.signIn()">LOG IN</button>
+              <button class="wButton fade buttonNew" ng-click="vm.signIn()">LOG IN</button>
               <span class="divider-2"></span>
-              <button class="wButton fade" ng-click="vm.cancel()">CANCEL</button>
+              <button class="wButton fade buttonNew" ng-click="vm.cancel()">CANCEL</button>
             </form>
           </div>
         </div>
@@ -234,18 +258,17 @@
   <!-- /shared blocks-->
 
   <!-- HEADER -->
-  <header class="fFade noSelect" ng-controller="mainMenuController as menu">
+  <header class="fFade noSelect navHeader" ng-controller="mainMenuController as menu">
     <img id="topLogoH" src="img/topleftlogo_hor.svg" alt="Waves platform logo horizontal" />
     <div id="logoNversion2">
-      <img src="img/topleftlogo.svg" style="width: 80%; height: 80%"/>
-      <p ng-class='{testnet: isTestnet()}'>{{::home.title}} <span class="wlcversion">{{::home.version}}</span></p>
+      <img src="img/topleftlogo.svg" class="katLogo" style="width: 100%; height: 100%"/>
     </div>
-    <span id="version" class="centerIt">
-                <span>Address:</span>
-                <span id="wavesAccountAddress" class="clipSpan" tooltipster tooltip-theme="tooltipster-theme3" title="Copy the address to clipboard." ngclipboard data-clipboard-text="{{::menu.address}}" ngclipboard-success="clipboardOk()">{{::menu.address}}</span>
-                <span id="wavesAccountAddressQr" ng-click="menu.showAddressQr()">your address (QR)</span>
+    <span id="version" class="centerIt">  
+                <span class="fontSize">Address:</span>
+                <span id="wavesAccountAddress" class="clipSpan fontSize" tooltipster tooltip-theme="tooltipster-theme3" title="Copy the address to clipboard." ngclipboard data-clipboard-text="{{::menu.address}}" ngclipboard-success="clipboardOk()">{{::menu.address}}</span>
+                <span id="wavesAccountAddressQr" class="fontSize" ng-click="menu.showAddressQr()">show address (QR)</span>
                 <span class="divider-2"></span>
-                <span class="inlineParagraph">Block:</span> <span id="blockheight">{{menu.blockHeight}}</span>
+                <span class="inlineParagraph fontSize">Block:</span> <span id="blockheight" class="fontSize">{{menu.blockHeight}}</span>
             </span>
 
     <div class="noDisp">
@@ -270,9 +293,9 @@
             <p class="dialog-text">2. Store your SEED safely, it is the only<br/>way to restore your wallet.</p>
           </div>
           <label for="seedBackup">SEED</label><br/>
-          <textarea id="seedBackup" class="wInput" rows="4" readonly ng-model="menu.seed"></textarea><br/>
+          <textarea id="seedBackup" class="wInput" rows="2" readonly ng-model="menu.seed"></textarea><br/>
           <label for="encodedSeedBackup">ENCODED SEED</label><br/>
-          <textarea id="encodedSeedBackup" class="wInput" rows="4" readonly ng-model="menu.encodedSeed"></textarea><br/>
+          <textarea id="encodedSeedBackup" class="wInput" rows="2" readonly ng-model="menu.encodedSeed"></textarea><br/>
           <label for="privateKeyBackup">PRIVATE KEY</label><br/>
           <input id="privateKeyBackup" class="wInput" type="text" readonly ng-model="menu.privateKey"/><br/>
           <label for="publicKeyBackup">PUBLIC KEY</label><br/>
@@ -281,9 +304,15 @@
           <input id="addressBackup" class="wInput" type="text" readonly ng-model="menu.address"/>
         </form>
       </div>
-      <a ng-click="home.featureUnderDevelopment()">
+<!--       <a ng-click="home.featureUnderDevelopment()">
         <img class="header-Icon fade" tooltipster tooltip-theme="tooltipster-theme2" src="img/uiTB-iconset-preferences.svg" alt="Preferences" title="Preferences"/>
-      </a>
+      </a> -->
+
+<!-- button for email update TEMPORARILY DISABLED-->
+<!--       <a ng-click="menu.showEmailUpdateDialog()">
+        <img class="header-Icon fade" tooltipster tooltip-theme="tooltipster-theme2" src="img/email_logo.png" alt="Update Email" title="Update Email"/>
+      </a> -->
+<!-- end of email update -->
       <a ng-click="menu.showProfileDialog()">
         <img class="header-Icon fade" tooltipster tooltip-theme="tooltipster-theme2" src="img/uiTB-iconset-profile.svg" alt="User profile" title="User profile"/>
       </a>
@@ -333,15 +362,15 @@
   </header>
   <!-- / HEADER -->
 
-  <div id="navigationContainer" ng-controller="navigationController as nav">
+  <div id="navigationContainer" ng-controller="navigationController as nav" ng-app="sortApp">
     <!-- APPLICATION TAB SELECTORS -->
-    <section id="tabs" class="fFade noSelect">
+    <section id="tabs" class="fFade noSelect navHeader">
       <div id="tabs-Iconset" class="centerIt">
         <span waves-tab
               on-select="nav.changeTab(pageId)"
               current-page-id="nav.currentTab"
               page-id="wallet"
-              caption="'Wallet tab'"
+              caption="'Wallet'"
               tooltipster
               tooltip-html
               tooltip-theme="tooltipster-theme3"
@@ -350,7 +379,7 @@
               on-select="nav.changeTab(pageId)"
               current-page-id="nav.currentTab"
               page-id="portfolio"
-              caption="'Portfolio tab'"
+              caption="'Portfolio'"
               tooltipster
               tooltip-html
               tooltip-theme="tooltipster-theme3"
@@ -359,7 +388,7 @@
               on-select="nav.changeTab(pageId)"
               current-page-id="nav.currentTab"
               page-id="exchange"
-              caption="'Exchange tab'"
+              caption="'Exchange'"
               tooltipster
               tooltip-html
               tooltip-theme="tooltipster-theme3"
@@ -368,7 +397,7 @@
               on-select="nav.changeTab(pageId)"
               current-page-id="nav.currentTab"
               page-id="leasing"
-              caption="'KatalystDEX leasing tab'"
+              caption="'KatalystDEX leasing'"
               tooltipster
               tooltip-html
               tooltip-theme="tooltipster-theme3"
@@ -377,7 +406,7 @@
               on-select="nav.changeTab(pageId)"
               current-page-id="nav.currentTab"
               page-id="history"
-              caption="'History tab'"
+              caption="'History'"
               tooltipster
               tooltip-html
               tooltip-theme="tooltipster-theme3"
@@ -386,7 +415,7 @@
               on-select="nav.changeTab(pageId)"
               current-page-id="nav.currentTab"
               page-id="tokens"
-              caption="'Tokens Creation tab'"
+              caption="'Tokens Creation'"
               tooltipster
               tooltip-html
               tooltip-theme="tooltipster-theme3"
@@ -395,7 +424,7 @@
               on-select="nav.changeTab(pageId)"
               current-page-id="nav.currentTab"
               page-id="community"
-              caption="'Community tab'"
+              caption="'Community'"
               tooltipster
               tooltip-html
               tooltip-theme="tooltipster-theme3"
@@ -1245,29 +1274,52 @@
         <!-- / MESSAGES TAB -->
 
         <!-- COMMUNITY TAB -->
-        <div id="mBB-community" class="mBB-content" ng-switch-when="community" ng-controller="communityController as community">
+        <div id="mBB-community" class="mBB-content" ng-switch-when="community" ng-controller="communityController as community" ng-app="sortApp">
           <!-- Temporary -->
           <p>DISCLAIMER: The Community tab will temporarily hold block information for testing purposes. After alpha phase this data  will be relocated inside the Preferences - Advanced area.</p>
           <h2 class="sectionHeader">LATEST BLOCKS INFORMATION</h2>
           <p class="centerIt">
           <div id="latestBlocks" class="wavesTable wScroll" >
             <table>
-              <thead>
-              <tr class="fade">
-                <td>HEIGHT</td>
-                <td>DATE</td>
-                <td>TRANSACTIONS</td>
-                <td>GENERATOR</td>
-              </tr>
-              </thead>
+
+                <thead>
+                  <tr class="fade">
+                    <td>
+                      <a href="#" ng-click="sortType = 'height'; sortReverse = !sortReverse">
+                        HEIGHT 
+                        <!-- <span class="fa fa-caret-down"></span> -->
+                        <span ng-show="sortType == 'height' && !sortReverse" class="fa fa-caret-up"></span>
+                        <span ng-show="sortType == 'height' && sortReverse" class="fa fa-caret-down"></span>
+                      </a>
+                    </td>
+                    <td>
+                      <a href="#" ng-click="sortType = 'timestamp'; sortReverse = !sortReverse">
+                      DATE 
+                        <span ng-show="sortType == 'timestamp' && !sortReverse" class="fa fa-caret-up"></span>
+                        <span ng-show="sortType == 'timestamp' && sortReverse" class="fa fa-caret-down"></span>
+                      </a>
+                    </td>
+                    <td>
+                      <a href="#" ng-click="sortType = 'transactions.length'; sortReverse = !sortReverse">
+                      TRANSACTIONS 
+                        <span ng-show="sortType == 'transactions.length' && !sortReverse" class="fa fa-caret-up"></span>
+                        <span ng-show="sortType == 'transactions.length' && sortReverse" class="fa fa-caret-down"></span>
+                      </a>
+                    </td>
+                    <td>GENERATOR</td>
+                  </tr>
+                </thead>
+    
               <tbody id="latestBlocksTable">
-              <tr class="fade">
+<!-- the incoming will not be sort, temporarily removed it -->
+<!--          <tr class="fade">
                 <td>{{community.candidate.block}}</td>
                 <td><i>incoming</i></td>
                 <td>{{community.candidate.size}}</td>
                 <td><i>unconfirmed</i></td>
-              </tr>
-              <tr class="fade" ng-repeat="block in community.blocks | orderBy:'timestamp':true">
+              </tr> -->
+              <tr class="fade" ng-repeat="block in community.blocks | orderBy:sortType:sortReverse"> 
+              <!-- remove the above hard coded orderBy and add a controller to sort the data, create an ng-app and ng-controller  -->
                 <td>{{block.height}}</td>
                 <td>{{block.timestamp | formatting}}</td>
                 <td>{{block.transactions.length}}</td>

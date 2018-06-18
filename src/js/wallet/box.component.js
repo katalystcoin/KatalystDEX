@@ -10,11 +10,11 @@
             displayName: Currency.KDEX.displayName
         };
         mapping[Currency.CKR.displayName] = {
-            image: 'wB-bg-KATALYST.svg',
+            image: 'CKR.png',
             displayName: Currency.CKR.displayName
         };
         mapping[Currency.SGD.displayName] = {
-            image: 'wB-bg-KATALYST.svg',
+            image: 'yusof-ishak.png',
             displayName: Currency.SGD.displayName
         };
 

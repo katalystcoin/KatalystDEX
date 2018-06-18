@@ -3,11 +3,43 @@
 <table>
   <thead>
   <tr>
-    <td>Date</td>
-    <td>Type</td>
-    <td>Price ({{$ctrl.pair.priceAsset.shortName}})</td>
-    <td>Amount ({{$ctrl.pair.amountAsset.shortName}})</td>
-    <td>Total ({{$ctrl.pair.priceAsset.shortName}})</td>
+        <tr class="fade">
+          <td>
+            <a href="#" ng-click="sortType = 'date'; sortReverse = !sortReverse">
+              Date 
+              <!-- <span class="fa fa-caret-down"></span> -->
+              <span ng-show="sortType == 'date' && !sortReverse" class="fa fa-caret-up"></span>
+              <span ng-show="sortType == 'date' && sortReverse" class="fa fa-caret-down"></span>
+            </a>
+          </td>
+          <td>
+            <a href="#" ng-click="sortType = 'type'; sortReverse = !sortReverse">
+            Type 
+              <span ng-show="sortType == 'type' && !sortReverse" class="fa fa-caret-up"></span>
+              <span ng-show="sortType == 'type' && sortReverse" class="fa fa-caret-down"></span>
+            </a>
+          </td>
+          <td>
+            <a href="#" ng-click="sortType = 'price'; sortReverse = !sortReverse">
+            Price ({{$ctrl.pair.priceAsset.shortName}}) 
+              <span ng-show="sortType == 'price' && !sortReverse" class="fa fa-caret-up"></span>
+              <span ng-show="sortType == 'price' && sortReverse" class="fa fa-caret-down"></span>
+            </a>
+          </td>
+          <td>
+            <a href="#" ng-click="sortType = 'amount'; sortReverse = !sortReverse">
+            Amount ({{$ctrl.pair.amountAsset.shortName}}) 
+              <span ng-show="sortType == 'amount' && !sortReverse" class="fa fa-caret-up"></span>
+              <span ng-show="sortType == 'amount' && sortReverse" class="fa fa-caret-down"></span>
+            </a>
+          </td>
+          <td>
+            <a href="#" ng-click="sortType = 'total'; sortReverse = !sortReverse">
+            Total ({{$ctrl.pair.priceAsset.shortName}}) 
+              <span ng-show="sortType == 'total' && !sortReverse" class="fa fa-caret-up"></span>
+              <span ng-show="sortType == 'total' && sortReverse" class="fa fa-caret-down"></span>
+            </a>
+          </td>
   </tr>
   </thead>
 </table>
@@ -15,7 +47,7 @@
 <waves-scrollbox>
   <table>
     <tbody>
-    <tr ng-repeat="trade in $ctrl.trades">
+    <tr ng-repeat="trade in $ctrl.trades | orderBy:sortType:sortReverse">
       <td>{{trade.timestamp | formatting}}</td>
       <td class="type" ng-class="trade.type">{{trade.typeTitle}}</td>
       <td>{{trade.price | number:$ctrl.pair.priceAsset.precision}}</td>

@@ -3,12 +3,46 @@
 <table class="user">
   <thead>
     <tr>
-      <td>Status</td>
-      <td>Type</td>
-      <td>Price</td>
-      <td>{{$ctrl.pair.amountAsset.shortName}}</td>
-      <td>{{$ctrl.pair.priceAsset.shortName}}</td>
-      <td></td>
+      <td>
+        <a href="#" ng-click="sortType = 'status'; sortReverse = !sortReverse">
+          Status 
+          <!-- <span class="fa fa-caret-down"></span> -->
+          <span ng-show="sortType == 'status' && !sortReverse" class="fa fa-caret-up"></span>
+          <span ng-show="sortType == 'status' && sortReverse" class="fa fa-caret-down"></span>
+        </a>
+      </td>
+      <td>
+        <a href="#" ng-click="sortType = 'type'; sortReverse = !sortReverse">
+          Type 
+          <!-- <span class="fa fa-caret-down"></span> -->
+          <span ng-show="sortType == 'type' && !sortReverse" class="fa fa-caret-up"></span>
+          <span ng-show="sortType == 'type' && sortReverse" class="fa fa-caret-down"></span>
+        </a>
+      </td>
+      <td>
+        <a href="#" ng-click="sortType = 'price'; sortReverse = !sortReverse">
+          Price 
+          <!-- <span class="fa fa-caret-down"></span> -->
+          <span ng-show="sortType == 'price' && !sortReverse" class="fa fa-caret-up"></span>
+          <span ng-show="sortType == 'price' && sortReverse" class="fa fa-caret-down"></span>
+        </a>
+      </td>
+      <td>
+        <a href="#" ng-click="sortType = 'asset1'; sortReverse = !sortReverse">
+          {{$ctrl.pair.amountAsset.shortName}} 
+          <!-- <span class="fa fa-caret-down"></span> -->
+          <span ng-show="sortType == 'asset1' && !sortReverse" class="fa fa-caret-up"></span>
+          <span ng-show="sortType == 'asset1' && sortReverse" class="fa fa-caret-down"></span>
+        </a>
+      </td>
+      <td>
+        <a href="#" ng-click="sortType = 'asset2'; sortReverse = !sortReverse">
+          {{$ctrl.pair.priceAsset.shortName}} 
+          <!-- <span class="fa fa-caret-down"></span> -->
+          <span ng-show="sortType == 'asset2' && !sortReverse" class="fa fa-caret-up"></span>
+          <span ng-show="sortType == 'asset2' && sortReverse" class="fa fa-caret-down"></span>
+        </a>
+      </td>
     </tr>
   </thead>
 </table>
@@ -16,7 +50,8 @@
 <waves-scrollbox>
   <table class="user">
     <tbody>
-      <tr ng-repeat="order in $ctrl.orders"
+
+      <tr ng-repeat="order in $ctrl.orders | orderBy:sortType:sortReverse"
           ng-class="{
             'filled': order.status === 'Filled' || order.status === 'Cancelled',
             'not-found': order.status === 'NotFound'

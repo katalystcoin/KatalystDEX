@@ -15,7 +15,10 @@
 /* END OF REMOVE ACCOUNT CONFIRMATION POPUP */
 
 #AccHeader {
-  margin-bottom: 1rem;
+  margin-bottom: 0.2rem;
+  margin-top: 0.2rem;
+  background: @color-turquoise; 
+  color: @color-navy-blue;
 }
 
 #accounts h2,
@@ -32,22 +35,27 @@
 .loginAccountDiv {
   font-size: 1.25rem;
   height: 55px;
+  // background: @color-turquoise; 
+  color: @color-turquoise;
 
   & > span {
-    opacity: .5;
+    // opacity: .5;
     outline: none;
     &:hover {
+      color: @color-mid-blue;
       cursor: pointer;
       opacity: 1;
     }
   }
 
   & .clipSpan {
-    color: red;
+    color: @color-turquoise;
   }
 
   & > .wButton:hover {
     border: none;
+    background: @color-turquoise; 
+    color: @color-navy-blue; 
     opacity: 1;
   }
 }
@@ -126,4 +134,49 @@
 .loginAccountDiv {
   display: block;
   height: inherit;
+}
+
+.buttonNew{
+  background: @color-turquoise; 
+  color: @color-white;
+        &:hover {
+        background: @color-mid-blue;
+        color: @color-white;
+    }
+}
+
+.linkNew{
+  color: @color-navy-blue;
+      &:hover {
+        color: @color-turquoise;
+    }
+}
+
+.bgNew{
+  // background: @color-lightest-grey; 
+  color: @color-turquoise;
+        &:hover {
+        color: @color-grey;
+      }
+}
+
+.turquoise{
+  background: @color-turquoise;
+      &:hover {
+        color: @color-navy-blue;
+      }
+}
+
+.turquoiseBg{
+  background: @color-turquoise;
+  margin: 20px;
+  padding: 30px;
+}
+
+.turquoiseWord{
+  color: @color-turquoise;
+}
+
+.space{
+  padding: 15px;
 }

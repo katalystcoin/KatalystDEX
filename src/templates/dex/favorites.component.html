@@ -1,7 +1,17 @@
 <h2>Favorites</h2>
 
-<div class="pairs-list">
+<div class="pairs-list verticalText">
   <div class="pair"
        ng-repeat="p in $ctrl.pairs"
-       ng-click="$ctrl.onClick(p)">{{p.amountAsset.shortName}}/{{p.priceAsset.shortName}}</div>
+       ng-click="$ctrl.onClick(p)">
+       <img class="imgCoin" src="img/kdex.png" /> 
+       {{p.amountAsset.shortName}}/{{p.priceAsset.shortName}} 
+       <img class="imgCoin" src="img/{{p.priceAsset.shortName}}.png" /> </div>
+
+<!--          <div class="pair"
+       ng-repeat="p in $ctrl.pairs"
+       ng-click="$ctrl.onClick(p)">
+       <img class="imgCoin" src="img/topleftlogo.svg" /> 
+       {{p.amountAsset.shortName}}/{{p.priceAsset.shortName}} 
+       <img class="imgCoin" src="img/{{p.priceAsset.shortName}}.png" /> </div> -->
 </div>
