@@ -21,6 +21,15 @@
             image: 'iki.png',
             displayName: Currency.IKI.displayName
         };
+        mapping[Currency.HOTX.displayName] = {
+            image: 'HOTX.png',
+            displayName: Currency.HOTX.displayName
+        };
+        mapping[Currency.DC.displayName] = {
+            image: 'DC.png',
+            displayName: Currency.DC.displayName
+        };
+
         ctrl.$onChanges = function (changesObject) {
             if (changesObject.balance) {
                 var balance = changesObject.balance.currentValue;

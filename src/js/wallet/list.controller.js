@@ -40,6 +40,14 @@
             {
                 balance: new Money(0, Currency.IKI),
                 depositWith: Currency.IKI
+            },
+            {
+                balance: new Money(0, Currency.HOTX),
+                depositWith: Currency.HOTX
+            },
+            {
+                balance: new Money(0, Currency.DC),
+                depositWith: Currency.DC
             }
         ];
 
