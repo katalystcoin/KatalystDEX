@@ -28,15 +28,19 @@
                 balance: new Money(0, Currency.KDEX),
                 depositWith: Currency.KDEX
             },
-            {
-                balance: new Money(0, Currency.CKR),
-                depositWith: Currency.CKR
-            },
+            // {
+            //     balance: new Money(0, Currency.CKR),
+            //     depositWith: Currency.CKR
+            // },
             {
                 balance: new Money(0, Currency.SGD),
                 depositWith: Currency.SGD
+            },
+            // this is where we change the display controller
+            {
+                balance: new Money(0, Currency.IKI),
+                depositWith: Currency.IKI
             }
-
         ];
 
         ctrl.transactions = [];

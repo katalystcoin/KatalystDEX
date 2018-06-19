@@ -9,15 +9,18 @@
             image: 'wB-bg-KATALYST.svg',
             displayName: Currency.KDEX.displayName
         };
-        mapping[Currency.CKR.displayName] = {
-            image: 'wB-bg-KATALYST.svg',
-            displayName: Currency.CKR.displayName
-        };
+        // mapping[Currency.CKR.displayName] = {
+        //     image: 'CKR.png',
+        //     displayName: Currency.CKR.displayName
+        // };
         mapping[Currency.SGD.displayName] = {
-            image: 'wB-bg-KATALYST.svg',
+            image: 'yusof-ishak.png',
             displayName: Currency.SGD.displayName
         };
-
+        mapping[Currency.IKI.displayName] = {
+            image: 'iki.png',
+            displayName: Currency.IKI.displayName
+        };
         ctrl.$onChanges = function (changesObject) {
             if (changesObject.balance) {
                 var balance = changesObject.balance.currentValue;
