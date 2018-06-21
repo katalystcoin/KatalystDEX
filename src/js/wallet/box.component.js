@@ -18,7 +18,7 @@
             displayName: Currency.SGD.displayName
         };
         mapping[Currency.IKI.displayName] = {
-            image: 'iki.png',
+            image: 'IKI.png',
             displayName: Currency.IKI.displayName
         };
         mapping[Currency.HOTX.displayName] = {

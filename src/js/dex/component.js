@@ -27,7 +27,7 @@
         emptyDataFields();
 
         var favoritePairs = [
-            { amountAsset: Currency.KDEX, priceAsset: Currency.CKR },
+            // { amountAsset: Currency.KDEX, priceAsset: Currency.CKR },
             { amountAsset: Currency.KDEX, priceAsset: Currency.SGD },
             // { amountAsset: Currency.IKI, priceAsset: Currency.KDEX },
             { amountAsset: Currency.KDEX, priceAsset: Currency.IKI },

@@ -702,7 +702,7 @@ var Currency = (function () {
         verified: true
     });
     var IKI = new Currency({
-        id: '',
+        id: 'iki',
         displayName: 'ikicoin',
         shortName: 'IKI',
         precision: 8,
@@ -722,6 +722,22 @@ var Currency = (function () {
         precision: 2,
         verified: true
     });
+    var HOTX = new Currency({
+        id: '2YqDopXNUFfqyLCEy1gHJYxLqsExAQjpk1BjPJ4QebMB',
+        displayName: 'HOTX',
+        shortName: 'HOTX',
+        precision: 8,
+        verified: true
+    });
+    var DC = new Currency({
+        id: 'GQsFCrD43pHkhdvt5PnZ4W9Qgg8X9LjCSWAUG6mLoFMg',
+        displayName: 'DionCoin',
+        shortName: 'DC',
+        precision: 8,
+        verified: true
+    });
+
+
     function isCached(assetId) {
         return currencyCache.hasOwnProperty(assetId);
     }
@@ -733,6 +749,9 @@ var Currency = (function () {
         currencyCache[CKR.id] = CKR;
         currencyCache[SGD.id] = SGD;
         currencyCache[IKI.id] = IKI;
+        currencyCache[HOTX.id] = HOTX;
+        currencyCache[DC.id] = DC;
+
 
     }
 
@@ -756,7 +775,9 @@ var Currency = (function () {
         KDEX: KDEX,
         CKR:CKR,
         SGD:SGD,
-        IKI:IKI
+        IKI:IKI,
+        HOTX:HOTX,
+        DC:DC
     };
 })();
 

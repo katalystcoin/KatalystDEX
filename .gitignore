@@ -6,4 +6,5 @@
 /.grunt
 /build
 /distr
+/temp_mainnet
 *.pem
