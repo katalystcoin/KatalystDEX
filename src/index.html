@@ -1281,32 +1281,30 @@
           <div id="latestBlocks" class="wavesTable wScroll" >
             <table>
 
-                <thead>
-                  <tr class="fade">
-                    <td>
-                      <a href="#" ng-click="sortType = 'height'; sortReverse = !sortReverse">
-                        HEIGHT 
-                        <!-- <span class="fa fa-caret-down"></span> -->
-                        <span ng-show="sortType == 'height' && !sortReverse" class="fa fa-caret-up"></span>
-                        <span ng-show="sortType == 'height' && sortReverse" class="fa fa-caret-down"></span>
-                      </a>
-                    </td>
-                    <td>
-                      <a href="#" ng-click="sortType = 'timestamp'; sortReverse = !sortReverse">
-                      DATE 
-                        <span ng-show="sortType == 'timestamp' && !sortReverse" class="fa fa-caret-up"></span>
-                        <span ng-show="sortType == 'timestamp' && sortReverse" class="fa fa-caret-down"></span>
-                      </a>
-                    </td>
-                    <td>
-                      <a href="#" ng-click="sortType = 'transactions.length'; sortReverse = !sortReverse">
-                      TRANSACTIONS 
-                        <span ng-show="sortType == 'transactions.length' && !sortReverse" class="fa fa-caret-up"></span>
-                        <span ng-show="sortType == 'transactions.length' && sortReverse" class="fa fa-caret-down"></span>
-                      </a>
-                    </td>
-                    <td>GENERATOR</td>
-                  </tr>
+              <thead>
+              <tr class="fade">
+                <td>HEIGHT</td>
+                <td>DATE</td>
+                <td>TRANSACTIONS</td>
+                <td>GENERATOR</td>
+              </tr>
+              </thead>
+              <tbody id="latestBlocksTable">
+              <tr class="fade">
+                <td>{{community.candidate.block}}</td>
+                <td><i>incoming</i></td>
+                <td>{{community.candidate.size}}</td>
+                <td><i>unconfirmed</i></td>
+              </tr>
+              <tr class="fade" ng-repeat="block in community.blocks | orderBy:'timestamp':true">
+                <td>{{block.height}}</td>
+                <td>{{block.timestamp | formatting}}</td>
+                <td>{{block.transactions.length}}</td>
+                <td>
+                  <span class="clipSpan" tooltipster tooltip-theme="tooltipster-theme1" ngclipboard title="Copy this address to the clipboard." data-clipboard-text="{{block.generator}}" ngclipboard-success="clipboardOk()">{{block.generator}}</span>
+                </td>
+              </tr>
+              
                 </thead>
     
               <tbody id="latestBlocksTable">
