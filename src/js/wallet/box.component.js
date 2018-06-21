@@ -25,9 +25,29 @@
             image: 'HOTX.png',
             displayName: Currency.HOTX.displayName
         };
-        mapping[Currency.DC.displayName] = {
-            image: 'DC.png',
-            displayName: Currency.DC.displayName
+        // mapping[Currency.DC.displayName] = {
+        //     image: 'DC.png',
+        //     displayName: Currency.DC.displayName
+        // };
+        mapping[Currency.KLTC.displayName] = {
+            image: 'KLTC.svg',
+            displayName: Currency.KLTC.displayName
+        };
+        mapping[Currency.KLTC.displayName] = {
+            image: 'KLTC.svg',
+            displayName: Currency.KLTC.displayName
+        };
+        mapping[Currency.KETH.displayName] = {
+            image: 'KETH.svg',
+            displayName: Currency.KETH.displayName
+        };
+        mapping[Currency.KBCH.displayName] = {
+            image: 'KBCH.svg',
+            displayName: Currency.KBCH.displayName
+        };
+        mapping[Currency.KBTC.displayName] = {
+            image: 'KBTC.svg',
+            displayName: Currency.KBTC.displayName
         };
 
         ctrl.$onChanges = function (changesObject) {

@@ -45,9 +45,25 @@
                 balance: new Money(0, Currency.HOTX),
                 depositWith: Currency.HOTX
             },
+            // {
+            //     balance: new Money(0, Currency.DC),
+            //     depositWith: Currency.DC
+            // },
             {
-                balance: new Money(0, Currency.DC),
-                depositWith: Currency.DC
+                balance: new Money(0, Currency.KLTC),
+                depositWith: Currency.KLTC
+            },
+            {
+                balance: new Money(0, Currency.KETH),
+                depositWith: Currency.KETH
+            },
+            {
+                balance: new Money(0, Currency.KBCH),
+                depositWith: Currency.KBCH
+            },
+            {
+                balance: new Money(0, Currency.KBTC),
+                depositWith: Currency.KBTC
             }
         ];
 

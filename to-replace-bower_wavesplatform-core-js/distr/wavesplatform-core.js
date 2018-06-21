@@ -702,7 +702,7 @@ var Currency = (function () {
         verified: true
     });
     var IKI = new Currency({
-        id: 'iki',
+        id: 'J8EDLxNhnH6aKbHTmUQhq8dnnSamPWJSt3PzPoidyFMz',
         displayName: 'ikicoin',
         shortName: 'IKI',
         precision: 8,
@@ -736,7 +736,34 @@ var Currency = (function () {
         precision: 8,
         verified: true
     });
-
+    var KLTC = new Currency({
+        id: 'GJD14mTYwSiFJwJjFAj2zBm5JBgYpwU6W6X1xbEK5LGV',
+        displayName: 'kLTC',
+        shortName: 'KLTC',
+        precision: 8,
+        verified: true
+    });
+    var KETH = new Currency({
+        id: '6Xxv6G5xAZJUtvDsenbFc7LXka3WEnVtWBajwRbwHbrz',
+        displayName: 'kETH',
+        shortName: 'KETH',
+        precision: 8,
+        verified: true
+    });
+    var KBCH = new Currency({
+        id: '8wW3seJ8dVG6YqNdLkGzf5MyChknRny7nTxmr4iqGouW',
+        displayName: 'kBCH',
+        shortName: 'KBCH',
+        precision: 8,
+        verified: true
+    });
+    var KBTC = new Currency({
+        id: '7aqUdRkXWeEJv2MFB2Bbfh1Aw7tQvZY1C1FBBBGW5uwC',
+        displayName: 'kBTC',
+        shortName: 'KBTC',
+        precision: 8,
+        verified: true
+    });
 
     function isCached(assetId) {
         return currencyCache.hasOwnProperty(assetId);
@@ -751,6 +778,10 @@ var Currency = (function () {
         currencyCache[IKI.id] = IKI;
         currencyCache[HOTX.id] = HOTX;
         currencyCache[DC.id] = DC;
+        currencyCache[KLTC.id] = KLTC;
+        currencyCache[KETH.id] = KETH;
+        currencyCache[KBCH.id] = KBCH;
+        currencyCache[KBTC.id] = KBTC
 
 
     }
@@ -777,7 +808,11 @@ var Currency = (function () {
         SGD:SGD,
         IKI:IKI,
         HOTX:HOTX,
-        DC:DC
+        DC:DC,
+        KLTC:KLTC,
+        KETH:KETH,
+        KBCH:KBCH,
+        KBTC:KBTC
     };
 })();
 
