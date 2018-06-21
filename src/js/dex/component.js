@@ -32,7 +32,11 @@
             // { amountAsset: Currency.IKI, priceAsset: Currency.KDEX },
             { amountAsset: Currency.KDEX, priceAsset: Currency.IKI },
             { amountAsset: Currency.KDEX, priceAsset: Currency.HOTX },
-            { amountAsset: Currency.KDEX, priceAsset: Currency.DC }
+            // { amountAsset: Currency.KDEX, priceAsset: Currency.KBTC },
+            // { amountAsset: Currency.KDEX, priceAsset: Currency.KBCH },
+            // { amountAsset: Currency.KDEX, priceAsset: Currency.KETH },
+            // { amountAsset: Currency.KDEX, priceAsset: Currency.KLTC },
+            // { amountAsset: Currency.KDEX, priceAsset: Currency.DC }
         ];
 
         ctrl.favoritePairs = favoritePairs;

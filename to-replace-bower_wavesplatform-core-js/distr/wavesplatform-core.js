@@ -702,7 +702,7 @@ var Currency = (function () {
         verified: true
     });
     var IKI = new Currency({
-        id: 'iki',
+        id: 'J8EDLxNhnH6aKbHTmUQhq8dnnSamPWJSt3PzPoidyFMz',
         displayName: 'ikicoin',
         shortName: 'IKI',
         precision: 8,
@@ -729,10 +729,38 @@ var Currency = (function () {
         precision: 8,
         verified: true
     });
-    var DC = new Currency({
-        id: 'GQsFCrD43pHkhdvt5PnZ4W9Qgg8X9LjCSWAUG6mLoFMg',
-        displayName: 'DionCoin',
-        shortName: 'DC',
+    // var DC = new Currency({
+    //     id: 'GQsFCrD43pHkhdvt5PnZ4W9Qgg8X9LjCSWAUG6mLoFMg',
+    //     displayName: 'DionCoin',
+    //     shortName: 'DC',
+    //     precision: 8,
+    //     verified: true
+    // });
+    var kBTC = new Currency({
+        id: '7aqUdRkXWeEJv2MFB2Bbfh1Aw7tQvZY1C1FBBBGW5uwC',
+        displayName: 'kBTC',
+        shortName: 'kBTC',
+        precision: 8,
+        verified: true
+    });
+    var kBCH = new Currency({
+        id: '8wW3seJ8dVG6YqNdLkGzf5MyChknRny7nTxmr4iqGouW',
+        displayName: 'kBCH',
+        shortName: 'kBCH',
+        precision: 8,
+        verified: true
+    });
+    var kETH = new Currency({
+        id: '6Xxv6G5xAZJUtvDsenbFc7LXka3WEnVtWBajwRbwHbrz',
+        displayName: 'kETH',
+        shortName: 'kETH',
+        precision: 8,
+        verified: true
+    });
+    var kLTC = new Currency({
+        id: 'GJD14mTYwSiFJwJjFAj2zBm5JBgYpwU6W6X1xbEK5LGV',
+        displayName: 'kLTC',
+        shortName: 'kLTC',
         precision: 8,
         verified: true
     });
@@ -744,15 +772,16 @@ var Currency = (function () {
 
     function invalidateCache() {
         currencyCache = {};
-
         currencyCache[KDEX.id] = KDEX;
         currencyCache[CKR.id] = CKR;
         currencyCache[SGD.id] = SGD;
         currencyCache[IKI.id] = IKI;
         currencyCache[HOTX.id] = HOTX;
         currencyCache[DC.id] = DC;
-
-
+        currencyCache[kBTC.id] = kBTC;
+        currencyCache[kBCH.id] = kBCH;
+        currencyCache[kETH.id] = kETH;
+        currencyCache[kLTC.id] = kLTC;
     }
 
     invalidateCache();
@@ -777,7 +806,11 @@ var Currency = (function () {
         SGD:SGD,
         IKI:IKI,
         HOTX:HOTX,
-        DC:DC
+        DC:DC,
+        kBTC:kBTC,
+        kBCH:kBCH,
+        kETH:kETH,
+        kLTC:kLTC,
     };
 })();
 

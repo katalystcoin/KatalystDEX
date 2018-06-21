@@ -25,10 +25,27 @@
             image: 'HOTX.png',
             displayName: Currency.HOTX.displayName
         };
-        mapping[Currency.DC.displayName] = {
-            image: 'DC.png',
-            displayName: Currency.DC.displayName
-        };
+        // mapping[Currency.KBTC.displayName] = {
+        //     image: 'kBTC.svg',
+        //     displayName: Currency.KBTC.displayName
+        // };
+        // mapping[Currency.KBCH.displayName] = {
+        //     image: 'kBCH.svg',
+        //     displayName: Currency.KBCH.displayName
+        // };
+        // mapping[Currency.KETH.displayName] = {
+        //     image: 'kETH.svg',
+        //     displayName: Currency.KETH.displayName
+        // };
+        // mapping[Currency.KLTC.displayName] = {
+        //     image: 'kLTC.svg',
+        //     displayName: Currency.KLTC.displayName
+        // };
+
+        // mapping[Currency.DC.displayName] = {
+        //     image: 'DC.png',
+        //     displayName: Currency.DC.displayName
+        // };
 
         ctrl.$onChanges = function (changesObject) {
             if (changesObject.balance) {
