@@ -10,6 +10,8 @@
 </div>
 <!-- <hr> -->
 
+
+
 <div class="wB-buttons">
   <a ng-click="$ctrl.onSend({currency: $ctrl.balance.currency})">
     <div class="wB-but wB-butSend fade"><img src="img/send.png" style="width: 16px; height: 16px"/><p>SEND</p></div>
@@ -17,8 +19,11 @@
   <a ng-click="$ctrl.onWithdraw({currency: $ctrl.balance.currency})">
     <div class="wB-but wB-butRec fade"><img src="img/withdraw.png" style="width: 16px; height: 16px"/><p>WITHDRAW</p></div>
   </a>
+<!--   <a ng-click="$ctrl.onWithdraw({currency: $ctrl.balance.currency})">
+    <div class="wB-but wB-butRec fade"><img src="img/withdraw.png" style="width: 16px; height: 16px"/><p>SELL</p></div>
+  </a> -->
   <a ng-click="$ctrl.onDeposit({currency: $ctrl.balance.currency})">
-    <div class="wB-but wB-butTrade fade"><img src="img/deposit.png" style="width: 16px; height: 16px"/><p>DEPOSIT</p></div>
+    <div class="wB-but wB-butTrade fade"><img src="img/deposit.png" style="width: 16px; height: 16px"/><p>BUY</p></div>
   </a>
 </div>
 

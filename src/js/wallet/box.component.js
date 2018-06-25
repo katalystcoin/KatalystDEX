@@ -28,11 +28,6 @@
         // mapping[Currency.DC.displayName] = {
         //     image: 'DC.png',
         //     displayName: Currency.DC.displayName
-        // };
-        mapping[Currency.KLTC.displayName] = {
-            image: 'KLTC.svg',
-            displayName: Currency.KLTC.displayName
-        };
         mapping[Currency.KLTC.displayName] = {
             image: 'KLTC.svg',
             displayName: Currency.KLTC.displayName

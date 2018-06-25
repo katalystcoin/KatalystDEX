@@ -21,7 +21,7 @@
 
         ctrl.pair = {
             amountAsset: Currency.KDEX,
-            priceAsset: Currency.CKR
+            priceAsset: Currency.SGD
         };
 
         emptyDataFields();

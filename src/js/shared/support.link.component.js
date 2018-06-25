@@ -1,7 +1,8 @@
 (function () {
     'use strict';
 
-    var url = 'support@katalystcoin.com';
+    var url = 'https://katalystcoin.org/katalyst-faucet';
+    var display = 'Free KDEX Faucet';
 
     function SupportLinkController() {}
 
@@ -9,6 +10,6 @@
         .module('app.shared')
         .component('wavesSupportLink', {
             controller: SupportLinkController,
-            template: '<a href="http://' + url + '" target="_blank">' + url + '</a>'
+            template: '<a href="' + url + '" target="_blank">' + display + '</a>'
         });
 })();
