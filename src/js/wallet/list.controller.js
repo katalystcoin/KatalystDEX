@@ -64,6 +64,10 @@
             {
                 balance: new Money(0, Currency.KBTC),
                 depositWith: Currency.KBTC
+            },
+            {
+                balance: new Money(0, Currency.KWAVES),
+                depositWith: Currency.KWAVES
             }
         ];
 

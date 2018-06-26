@@ -44,6 +44,10 @@
             image: 'KBTC.svg',
             displayName: Currency.KBTC.displayName
         };
+        mapping[Currency.KWAVES.displayName] = {
+            image: 'KWAVES.png',
+            displayName: Currency.KWAVES.displayName
+        };
 
         ctrl.$onChanges = function (changesObject) {
             if (changesObject.balance) {

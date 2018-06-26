@@ -36,7 +36,8 @@
             { amountAsset: Currency.KDEX, priceAsset: Currency.KLTC },
             { amountAsset: Currency.KDEX, priceAsset: Currency.KETH },
             { amountAsset: Currency.KDEX, priceAsset: Currency.KBCH },
-            { amountAsset: Currency.KDEX, priceAsset: Currency.KBTC }
+            { amountAsset: Currency.KDEX, priceAsset: Currency.KBTC },
+            { amountAsset: Currency.KDEX, priceAsset: Currency.KWAVES },
         ];
 
         ctrl.favoritePairs = favoritePairs;
