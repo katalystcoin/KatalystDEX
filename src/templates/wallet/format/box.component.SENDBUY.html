@@ -1,0 +1,31 @@
+<div class="nameHead">
+<img ng-src="img/{{::$ctrl.image}}" alt="{{::$ctrl.displayName}}"/> &nbsp
+<div class="wB-name details">{{::$ctrl.displayName | uppercase}}</div>
+<div class="wB-add details"></div>
+</div>
+
+<div class="balanceRow">
+<div class="details"><span class="wB-balIntNew">{{$ctrl.integerBalance}} </span><span class="wB-balDecNew">{{$ctrl.fractionBalance}}</span></div>
+<!-- <div class="wB-balDec details">{{$ctrl.fractionBalance}}</div> -->
+</div>
+<!-- <hr> -->
+
+
+
+<div class="wB-buttons">
+  <a ng-click="$ctrl.onSend({currency: $ctrl.balance.currency})">
+    <div class="wB-but wB-butSend fade"><img src="img/send.png" style="width: 16px; height: 16px"/><p>SEND</p></div>
+  </a>
+<!--   <a ng-click="$ctrl.onWithdraw({currency: $ctrl.balance.currency})">
+    <div class="wB-but wB-butRec fade"><img src="img/withdraw.png" style="width: 16px; height: 16px"/><p>WITHDRAW</p></div>
+  </a> -->
+<!--   <a ng-click="$ctrl.onWithdraw({currency: $ctrl.balance.currency})">
+    <div class="wB-but wB-butRec fade"><img src="img/withdraw.png" style="width: 16px; height: 16px"/><p>SELL</p></div>
+  </a> -->
+  <a ng-click="$ctrl.onDeposit({currency: $ctrl.balance.currency})">
+    <div class="wB-but wB-butTrade fade"><img src="img/deposit.png" style="width: 16px; height: 16px"/><p>BUY</p></div>
+  </a>
+</div>
+
+
+

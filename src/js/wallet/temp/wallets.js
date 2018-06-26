@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    function WavesWalletListController($scope, $interval, events, applicationContext,
+    function WavesWalletListaController($scope, $interval, events, applicationContext,
                                        apiService, transactionLoadingService, dialogService) {
         var ctrl = this;
         var refreshPromise;
@@ -18,38 +18,34 @@
         }
 
         function findWalletByCurrency(currency) {
-            // console.log(currency);
-            return _.find(ctrl.wallets, function (w) {
+            return _.find(ctrl.walletsa, function (w) {
                 return w.balance.currency === currency;
             });
-            // return _.find(ctrl.walletsa, function (w) {
-            //     return w.balance.currency === currency;
-            // });
         }
 
-        ctrl.wallets = [
-            {
-                balance: new Money(0, Currency.KDEX),
-                depositWith: Currency.KDEX
-            },
+        ctrl.walletsa = [
             // {
-            //     balance: new Money(0, Currency.CKR),
-            //     depositWith: Currency.CKR
+            //     balance: new Money(0, Currency.KDEX),
+            //     depositWith: Currency.KDEX
             // },
-            {
-                balance: new Money(0, Currency.SGD),
-                depositWith: Currency.SGD
-            },
-            // this is where we change the display controller
-            {
-                balance: new Money(0, Currency.IKI),
-                depositWith: Currency.IKI
-            },
-            {
-                balance: new Money(0, Currency.HOTX),
-                depositWith: Currency.HOTX
-            },
+            // // {
+            // //     balance: new Money(0, Currency.CKR),
+            // //     depositWith: Currency.CKR
+            // // },
             // {
+            //     balance: new Money(0, Currency.SGD),
+            //     depositWith: Currency.SGD
+            // },
+            // // this is where we change the display controller
+            // {
+            //     balance: new Money(0, Currency.IKI),
+            //     depositWith: Currency.IKI
+            // },
+            // {
+            //     balance: new Money(0, Currency.HOTX),
+            //     depositWith: Currency.HOTX
+            // },
+            // // {
             //     balance: new Money(0, Currency.DC),
             //     depositWith: Currency.DC
             // },
@@ -72,95 +68,6 @@
             {
                 balance: new Money(0, Currency.KWAVES),
                 depositWith: Currency.KWAVES
-            }
-        ];
-
-        ctrl.walletso = [
-            // {
-            //     balance: new Money(0, Currency.KDEX),
-            //     depositWith: Currency.KDEX
-            // },
-            // {
-            //     balance: new Money(0, Currency.CKR),
-            //     depositWith: Currency.CKR
-            // },
-            {
-                balance: new Money(0, Currency.SGD),
-                depositWith: Currency.SGD
-            },
-            // this is where we change the display controller
-            // {
-            //     balance: new Money(0, Currency.IKI),
-            //     depositWith: Currency.IKI
-            // },
-            // {
-            //     balance: new Money(0, Currency.HOTX),
-            //     depositWith: Currency.HOTX
-            // },
-            // // {
-            // //     balance: new Money(0, Currency.DC),
-            // //     depositWith: Currency.DC
-            // // },
-            // {
-            //     balance: new Money(0, Currency.KLTC),
-            //     depositWith: Currency.KLTC
-            // },
-            // {
-            //     balance: new Money(0, Currency.KETH),
-            //     depositWith: Currency.KETH
-            // },
-            // {
-            //     balance: new Money(0, Currency.KBCH),
-            //     depositWith: Currency.KBCH
-            // },
-            // {
-            //     balance: new Money(0, Currency.KBTC),
-            //     depositWith: Currency.KBTC
-            // },
-            // {
-            //     balance: new Money(0, Currency.KWAVES),
-            //     depositWith: Currency.KWAVES
-            // }
-        ];
-
-        ctrl.walletsa = [
-            {
-                balance: new Money(0, Currency.KLTC),
-                depositWith: Currency.KLTC
-            },
-            {
-                balance: new Money(0, Currency.KETH),
-                depositWith: Currency.KETH
-            },
-            {
-                balance: new Money(0, Currency.KBCH),
-                depositWith: Currency.KBCH
-            },
-            {
-                balance: new Money(0, Currency.KBTC),
-                depositWith: Currency.KBTC
-            },
-            {
-                balance: new Money(0, Currency.KWAVES),
-                depositWith: Currency.KWAVES
-            }
-        ];
-
-        ctrl.walletsb = [
-            {
-                balance: new Money(0, Currency.KDEX),
-                depositWith: Currency.KDEX
-            },
-            {
-                balance: new Money(0, Currency.IKI),
-                depositWith: Currency.IKI
-            }
-        ];
-
-        ctrl.walletsc = [
-            {
-                balance: new Money(0, Currency.HOTX),
-                depositWith: Currency.HOTX
             }
         ];
 
@@ -255,35 +162,7 @@
                         assetBalance.reissuable, assetBalance.quantity);
                 });
 
-                _.forEach(ctrl.walletso, function (wallet) {
-                    var asset = applicationContext.cache.assets[wallet.balance.currency.id];
-                    if (asset) {
-                        wallet.balance = asset.balance;
-                    }
-                });
-
-                _.forEach(ctrl.wallets, function (wallet) {
-                    var asset = applicationContext.cache.assets[wallet.balance.currency.id];
-                    if (asset) {
-                        wallet.balance = asset.balance;
-                    }
-                });
-
                 _.forEach(ctrl.walletsa, function (wallet) {
-                    var asset = applicationContext.cache.assets[wallet.balance.currency.id];
-                    if (asset) {
-                        wallet.balance = asset.balance;
-                    }
-                });
-
-                _.forEach(ctrl.walletsb, function (wallet) {
-                    var asset = applicationContext.cache.assets[wallet.balance.currency.id];
-                    if (asset) {
-                        wallet.balance = asset.balance;
-                    }
-                });
-
-                _.forEach(ctrl.walletsc, function (wallet) {
                     var asset = applicationContext.cache.assets[wallet.balance.currency.id];
                     if (asset) {
                         wallet.balance = asset.balance;
@@ -314,10 +193,10 @@
         }
     }
 
-    WavesWalletListController.$inject = ['$scope', '$interval', 'wallet.events', 'applicationContext',
+    WavesWalletListaController.$inject = ['$scope', '$interval', 'wallet.events', 'applicationContext',
                                          'apiService', 'transactionLoadingService', 'dialogService'];
 
     angular
         .module('app.wallet')
-        .controller('walletListController', WavesWalletListController);
+        .controller('walletListaController', WavesWalletListaController);
 })();
