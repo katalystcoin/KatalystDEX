@@ -764,6 +764,13 @@ var Currency = (function () {
         precision: 8,
         verified: true
     });
+    var KWAVES = new Currency({
+        id: '55BT23sHB3AfuYiTbuqVbAxkD42F1ST3oBAAvB3W8y4q',
+        displayName: 'kWAVES',
+        shortName: 'KWAVES',
+        precision: 8,
+        verified: true
+    });
 
     function isCached(assetId) {
         return currencyCache.hasOwnProperty(assetId);
@@ -781,7 +788,8 @@ var Currency = (function () {
         currencyCache[KLTC.id] = KLTC;
         currencyCache[KETH.id] = KETH;
         currencyCache[KBCH.id] = KBCH;
-        currencyCache[KBTC.id] = KBTC
+        currencyCache[KBTC.id] = KBTC;
+        currencyCache[KWAVES.id] = KWAVES
 
 
     }
@@ -812,7 +820,8 @@ var Currency = (function () {
         KLTC:KLTC,
         KETH:KETH,
         KBCH:KBCH,
-        KBTC:KBTC
+        KBTC:KBTC,
+        KWAVES:KWAVES
     };
 })();
 
