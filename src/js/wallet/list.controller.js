@@ -17,14 +17,29 @@
             });
         }
 
+// this function might be the main cause for balance not updating, need some way to find all the different ctrl.wallets
         function findWalletByCurrency(currency) {
             // console.log(currency);
-            return _.find(ctrl.wallets, function (w) {
+            if(currency == 'KDEX' || currency == 'IKI' ){
+                return _.find(ctrl.walletsb, function (w) {
                 return w.balance.currency === currency;
-            });
-            // return _.find(ctrl.walletsa, function (w) {
-            //     return w.balance.currency === currency;
-            // });
+            }); 
+            }
+            else if(currency == 'SGD' || currency == 'DC'){
+                return _.find(ctrl.walletso, function (w) {
+                return w.balance.currency === currency;
+            }); 
+            }
+            else if(currency == 'KLTC' || currency == 'KETH' || currency == 'KBCH'  || currency == 'KBTC'  || currency == 'KWAVES'){
+                return _.find(ctrl.walletsa, function (w) {
+                return w.balance.currency === currency;
+            }); 
+            }
+            else if(currency == 'HOTX'){
+                return _.find(ctrl.walletsc, function (w) {
+                return w.balance.currency === currency;
+            }); 
+            }
         }
 
         ctrl.wallets = [
@@ -97,10 +112,10 @@
             //     balance: new Money(0, Currency.HOTX),
             //     depositWith: Currency.HOTX
             // },
-            // // {
-            // //     balance: new Money(0, Currency.DC),
-            // //     depositWith: Currency.DC
-            // // },
+            // {
+            //     balance: new Money(0, Currency.DC),
+            //     depositWith: Currency.DC
+            // },
             // {
             //     balance: new Money(0, Currency.KLTC),
             //     depositWith: Currency.KLTC

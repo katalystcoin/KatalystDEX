@@ -836,6 +836,13 @@
           </div>
 
           <div class="flex-container">
+<!--        only this will display balance     
+            <wallet-box class="walletBox"
+                        ng-repeat="w in walletList.wallets"
+                        balance="w.balance"
+                        on-send="walletList.send(w)"
+                        on-withdraw="walletList.withdraw(w)"
+                        on-deposit="walletList.deposit(w)"></wallet-box> -->
             <wallet-boxb class="walletBox"
                         ng-repeat="w in walletList.walletsb"
                         balance="w.balance"
