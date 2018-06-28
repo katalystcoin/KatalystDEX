@@ -23,8 +23,10 @@ waves-dex-favorites {
 
     .pair,
     .action {
-      display: inline-block;
+      display: grid;
+      grid-template-columns: 50px 120px 50px;
       padding: 5px 10px;
+
       margin: 0 20px 18px 0;
       border-radius: 4px;
       text-align: center;
@@ -54,8 +56,13 @@ waves-dex-favorites {
 .imgCoin {
   width: 40px;
   height: 40px;
+  margin: 3px;
 }
 
 .minW {
-  min-width: 230px;
+  text-align: center;
+}
+
+.grid-item {
+  padding: 1px;
 }
