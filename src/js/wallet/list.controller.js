@@ -30,7 +30,7 @@
                 return w.balance.currency === currency;
             }); 
             }
-            else if(currency == 'KLTC' || currency == 'KETH' || currency == 'KBCH'  || currency == 'KBTC'  || currency == 'KWAVES'){
+            else if(currency == 'KLTC' || currency == 'KETH' || currency == 'KBCH'  || currency == 'KBTC'  || currency == 'KWAVES' || currency == 'VAI' || currency == 'VEX'){
                 return _.find(ctrl.walletsa, function (w) {
                 return w.balance.currency === currency;
             }); 
@@ -87,6 +87,14 @@
             {
                 balance: new Money(0, Currency.KWAVES),
                 depositWith: Currency.KWAVES
+            },
+            {
+                balance: new Money(0, Currency.VAI),
+                depositWith: Currency.VAI
+            },
+            {
+                balance: new Money(0, Currency.VEX),
+                depositWith: Currency.VEX
             }
         ];
 
@@ -158,6 +166,14 @@
             {
                 balance: new Money(0, Currency.KWAVES),
                 depositWith: Currency.KWAVES
+            },
+            {
+                balance: new Money(0, Currency.VAI),
+                depositWith: Currency.VAI
+            },
+            {
+                balance: new Money(0, Currency.VEX),
+                depositWith: Currency.VEX
             }
         ];
 

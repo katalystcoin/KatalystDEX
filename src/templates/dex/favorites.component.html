@@ -13,7 +13,7 @@
        ng-repeat="p in $ctrl.pairs"
        ng-click="$ctrl.onClick(p)">
        <img class="imgCoin grid-item" src="img/{{p.amountAsset.shortName}}.png" />
-       <div class="grid-item">{{p.amountAsset.shortName}}/{{p.priceAsset.shortName}} </div>
+       <div class="grid-item">{{p.amountAsset.shortName}}/{{p.priceAsset.displayName}} </div>
        <img class="imgCoin grid-item" src="img/{{p.priceAsset.shortName}}.png" />
 
 <!--          <div class="pair"

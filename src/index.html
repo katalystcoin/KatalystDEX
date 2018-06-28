@@ -46,14 +46,14 @@
 
 <!-- LOG IN AREA -->
 <div id="lockscreen" class="userBG" ng-controller="accountsController as accounts" ng-switch-when="accounts-screen" ng-cloak>
-  <table id="lockscreenTable">
+  <table id="lockscreenTable" class="">
 
     <thead>
-    <div id="logoNversion" style="height: 30vh">
-      <img src="img/wB-bg-KATALYST.svg" style="width: 100%; height: 100%"  class="centerizedImg"/>
-      <div class="centerizedText">
+    <div id="logoNversion" class="centerFlex">
+      <img src="img/logo-spin.svg" style="min-width: 350px;"/>
+<!--       <div class="centerizedText">
       <p class="centerizedText" ng-class='{testnet: isTestnet()}'>{{::home.title}} <span class="wlcversion">{{::home.version}}</span></p>
-      </div>
+      </div> -->
     </div>
     </thead>
 

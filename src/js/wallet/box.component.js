@@ -129,6 +129,14 @@
             image: 'KWAVES.png',
             displayName: Currency.KWAVES.displayName
         };
+        mapping[Currency.VAI.displayName] = {
+            image: 'VAI.png',
+            displayName: Currency.VAI.displayName
+        };
+        mapping[Currency.VEX.displayName] = {
+            image: 'VEX.png',
+            displayName: Currency.VEX.displayName
+        };
 
         ctrl.$onChanges = function (changesObject) {
             if (changesObject.balance) {
