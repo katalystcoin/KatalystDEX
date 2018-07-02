@@ -22,12 +22,6 @@
   <title>KatalystDEX Lite Client</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/waves-lite-client-styles-0.5.21.css">
-  <link rel="stylesheet" href="../bower_components/angular/angular-csp.css">
-  <link rel="stylesheet" href="../bower_components/angular-material/angular-material.css">
-  <link rel="stylesheet" href="../distr/devel/css/style.css">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-  <link href="css/bootstrap-4.0.0.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
   <link href="img/favicon.ico" type="image/x-icon" rel="shortcut icon">
 </head>
@@ -46,14 +40,14 @@
 
 <!-- LOG IN AREA -->
 <div id="lockscreen" class="userBG" ng-controller="accountsController as accounts" ng-switch-when="accounts-screen" ng-cloak>
-  <table id="lockscreenTable">
+  <table id="lockscreenTable" class="">
 
     <thead>
-    <div id="logoNversion" style="height: 30vh">
-      <img src="img/wB-bg-KATALYST.svg" style="width: 100%; height: 100%"  class="centerizedImg"/>
-      <div class="centerizedText">
+    <div id="logoNversion" class="centerFlex">
+      <img src="img/logo-spin.svg" style="min-width: 350px;"/>
+<!--       <div class="centerizedText">
       <p class="centerizedText" ng-class='{testnet: isTestnet()}'>{{::home.title}} <span class="wlcversion">{{::home.version}}</span></p>
-      </div>
+      </div> -->
     </div>
     </thead>
 
@@ -62,7 +56,12 @@
       <td>
         <!-- Accounts -->
         <div id="accounts">
-          <h2 id="AccHeader">{{accounts.caption}}</h2><hr>
+          <h2 id="AccHeader">{{accounts.caption}}</h2><br>
+
+          <a href="https://t.me/katalystplatform" target="_blank"><img src="img/telegram-icon.svg" alt="telegram-logo" class="telegramLogo"></a>
+          
+          <hr>
+          
           <div class="wavesAccounts" ng-controller="accountListController as list" ng-show="accounts.mode === 'list'">
             <p class="loginAccountDiv bgNew" ng-repeat="account in list.accounts track by $index">
                                     <span class="loginAccount fade" tooltipster tooltip-theme="tooltipster-theme1" title="Log into this account." ng-click="list.signIn(account)"> <br/>
@@ -1207,7 +1206,7 @@
             <h2 class="sectionHeader">TOKEN CREATION</h2>
             <form id="create-asset-form" name="createAssetForm" novalidate ng-validate="ctrl.issuanceValidationOptions" ng-submit="ctrl.assetIssueConfirmation(createAssetForm, $event)">
               <div class="balanceAmt">
-                <p>Waves balance: </p><span class="balancewaves">{{ctrl.wavesBalance | moneyLong:true}}</span>
+                <p>KDEX balance: </p><span class="balancewaves">{{ctrl.wavesBalance | moneyLong:true}}</span>
               </div>
               <table class="wavesTable">
                 <thead>
