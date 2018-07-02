@@ -22,7 +22,9 @@
 <!--   <a ng-click="$ctrl.onWithdraw({currency: $ctrl.balance.currency})">
     <div class="wB-but wB-butRec fade"><img src="img/withdraw.png" style="width: 16px; height: 16px"/><p>SELL</p></div>
   </a> -->
-  <a ng-click="$ctrl.onDeposit({currency: $ctrl.balance.currency})">
+
+  <!-- need to spend too much time on understanding code to disable the KDEX buy order on wallet, temporary solution is to call an empty function, i.e. withdraw -->
+  <a ng-click="$ctrl.onWithdraw({currency: $ctrl.balance.currency})">
     <div class="wB-but wB-butTrade fade"><img src="img/deposit.png" style="width: 16px; height: 16px"/><p>BUY</p></div>
   </a>
 </div>
