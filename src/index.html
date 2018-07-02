@@ -62,7 +62,12 @@
       <td>
         <!-- Accounts -->
         <div id="accounts">
-          <h2 id="AccHeader">{{accounts.caption}}</h2><hr>
+          <h2 id="AccHeader">{{accounts.caption}}</h2><br>
+
+          <a href="https://t.me/katalystplatform" target="_blank"><img src="img/telegram-icon.svg" alt="telegram-logo" class="telegramLogo"></a>
+          
+          <hr>
+          
           <div class="wavesAccounts" ng-controller="accountListController as list" ng-show="accounts.mode === 'list'">
             <p class="loginAccountDiv bgNew" ng-repeat="account in list.accounts track by $index">
                                     <span class="loginAccount fade" tooltipster tooltip-theme="tooltipster-theme1" title="Log into this account." ng-click="list.signIn(account)"> <br/>
@@ -1277,7 +1282,7 @@
             <img src="img/tab_cont_prev.svg" />
           </div>
           <div id="addContact-wPop" class="wavesPop">
-            <img class="wPop-header" src="img/modal-header.svg" />
+            <img class="wPop-header" src="img/modal-header.png" />
             <form id="addContactForm" class="wPop-content">
               <h2 class="sectionHeader">ADD CONTACT</h2>
               <p>Fill the fields below in order to add a new contact to your list:</p>
