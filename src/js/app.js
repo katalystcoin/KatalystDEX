@@ -156,3 +156,4 @@ function AngularApplicationRun(rest, applicationConstants, notificationService, 
 }
 
 AngularApplicationRun.$inject = ['Restangular', 'constants.application', 'notificationService', 'addressService'];
+

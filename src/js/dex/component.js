@@ -29,7 +29,6 @@
         var favoritePairs = [
             // { amountAsset: Currency.KDEX, priceAsset: Currency.CKR },
             { amountAsset: Currency.KDEX, priceAsset: Currency.SGD },
-            // { amountAsset: Currency.IKI, priceAsset: Currency.KDEX },
             { amountAsset: Currency.KDEX, priceAsset: Currency.IKI },
             { amountAsset: Currency.KDEX, priceAsset: Currency.HOTX },
             // { amountAsset: Currency.KDEX, priceAsset: Currency.DC },
@@ -39,10 +38,36 @@
             { amountAsset: Currency.KDEX, priceAsset: Currency.KBTC },
             { amountAsset: Currency.KDEX, priceAsset: Currency.KWAVES },
             { amountAsset: Currency.KDEX, priceAsset: Currency.VAI },
-            { amountAsset: Currency.KDEX, priceAsset: Currency.VEX }
+            { amountAsset: Currency.KDEX, priceAsset: Currency.VEX },
+            // { amountAsset: Currency.IKI, priceAsset: Currency.KDEX }, // technically should work, but the display seems to be conky
+            // { amountAsset: Currency.IKI, priceAsset: Currency.SGD },
+            // { amountAsset: Currency.IKI, priceAsset: Currency.HOTX },
+            // { amountAsset: Currency.IKI, priceAsset: Currency.KLTC },
+            // { amountAsset: Currency.IKI, priceAsset: Currency.KETH },
+            // { amountAsset: Currency.IKI, priceAsset: Currency.KBCH },
+            // { amountAsset: Currency.IKI, priceAsset: Currency.KBTC },
+            // { amountAsset: Currency.IKI, priceAsset: Currency.KWAVES },
+            // { amountAsset: Currency.IKI, priceAsset: Currency.VAI },
+            // { amountAsset: Currency.IKI, priceAsset: Currency.VEX }            
         ];
 
+        var favoritePairsIki = [
+            { amountAsset: Currency.IKI, priceAsset: Currency.KDEX }, // technically should work, but the display seems to be conky
+            { amountAsset: Currency.IKI, priceAsset: Currency.SGD },
+            { amountAsset: Currency.IKI, priceAsset: Currency.HOTX },
+            { amountAsset: Currency.IKI, priceAsset: Currency.KLTC },
+            { amountAsset: Currency.IKI, priceAsset: Currency.KETH },
+            { amountAsset: Currency.IKI, priceAsset: Currency.KBCH },
+            { amountAsset: Currency.IKI, priceAsset: Currency.KBTC },
+            { amountAsset: Currency.IKI, priceAsset: Currency.KWAVES },
+            { amountAsset: Currency.IKI, priceAsset: Currency.VAI },
+            { amountAsset: Currency.IKI, priceAsset: Currency.VEX }            
+        ];
+
+
+
         ctrl.favoritePairs = favoritePairs;
+        ctrl.favoritePairsIki = favoritePairsIki;
 
         ctrl.createOrder = function (type, price, amount, fee, callback) {
             // TODO : add a queue for the orders which weren't yet accepted

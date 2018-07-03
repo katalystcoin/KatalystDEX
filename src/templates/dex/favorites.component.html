@@ -6,20 +6,61 @@
        ng-click="$ctrl.onClick(p)">{{p.amountAsset.shortName}}/{{p.priceAsset.shortName}}</div>
 </div> -->
 
-<h2>Favorites</h2>
+<h2>Exchange Pairs</h2>
 
 <div class="pairs-list verticalText">
-  <div class="pair minW"
-       ng-repeat="p in $ctrl.pairs"
-       ng-click="$ctrl.onClick(p)">
-       <img class="imgCoin grid-item" src="img/{{p.amountAsset.shortName}}.png" />
-       <div class="grid-item">{{p.amountAsset.shortName}}/{{p.priceAsset.displayName}} </div>
-       <img class="imgCoin grid-item" src="img/{{p.priceAsset.shortName}}.png" />
 
-<!--          <div class="pair"
-       ng-repeat="p in $ctrl.pairs"
-       ng-click="$ctrl.onClick(p)">
-       <img class="imgCoin" src="img/topleftlogo.svg" /> 
-       {{p.amountAsset.shortName}}/{{p.priceAsset.shortName}} 
-       <img class="imgCoin" src="img/{{p.priceAsset.shortName}}.png" /> </div> -->
+  <!-- <div ng-controller="dropCtrl" class="dropdown"> -->
+<!--     <div class="pair minW pairGrid">
+      <img class="imgCoin grid-item" src="img/KDEX.png" />
+      <button onclick="dropFn()" class="dropbtn grid-item">KDEX</button>
+    </div> -->
+    <button onclick="dropFn()" class="dropbtn pairFlex">
+      <img class="imgCoin grid-item" src="img/KDEX.png" />
+      <p class="grid-item">KDEX</p>
+    </button>
+
+    <div id="myDropdown" class="dropdown-content">
+
+          <div class="pair minW pairFlex"
+               ng-repeat="p in $ctrl.pairs"
+               ng-click="$ctrl.onClick(p)"> 
+               <!-- <img class="imgCoin grid-item" src="img/{{p.amountAsset.shortName}}.png" /> -->
+               <img class="imgCoin grid-item" src="img/{{p.priceAsset.shortName}}.png" />
+               <div class="grid-item">{{p.priceAsset.displayName}} </div>
+
+        <!--          <div class="pair"
+               ng-repeat="p in $ctrl.pairs"
+               ng-click="$ctrl.onClick(p)">
+               <img class="imgCoin" src="img/topleftlogo.svg" /> 
+               {{p.amountAsset.shortName}}/{{p.priceAsset.shortName}} 
+               <img class="imgCoin" src="img/{{p.priceAsset.shortName}}.png" /> </div> -->
+          </div>
+    </div>
+
+  <!-- </div> -->
+
 </div>
+
+<!-- <script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function dropFn() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script> -->
