@@ -74,6 +74,7 @@ waves-dex-favorites {
     grid-template-columns: auto auto;
     color: @color-button-font;
     padding: 7px;
+    margin: 4px;
     font-size: 16px;
     border: none;
     cursor: pointer;
@@ -119,4 +120,61 @@ waves-dex-favorites {
 .pairFlex {
   display: flex;
   align-items: center;
+  padding-bottom: 5px;
+}
+
+
+ 
+/*hide the inputs*/
+input.menu {
+  display:none;
+  list-style-type:none;
+  padding: 3px;
+}
+
+input.menu:checked + .menu{
+  background: @color-button-border;
+}
+
+/*show the second levele menu of the selected voice*/
+input:checked ~ ul.submenu{
+  max-height:1000px;
+  transition:max-height 0.5s ease-in;
+}
+
+/*style for the second level menu*/
+ul.submenu{
+  max-height:0;
+  padding:0;
+  overflow:hidden;
+  list-style-type:none;
+  background:@color-button-border;
+  box-shadow:0 0 1px rgba(0,0,0,.3);
+  transition:max-height 0.5s ease-out;
+  position:absolute;
+  min-width:270px;
+}
+
+ul.submenu li:hover {
+  background: @color-table-row-odd;
+  min-width:270px;
+}
+
+ul.submenu li a{
+  display:block;
+  padding:12px;
+  color:#ddd;
+  text-decoration:none;
+  box-shadow:0 -1px rgba(0,0,0,.5) inset;
+  transition:background .3s;
+  white-space:nowrap;
+}
+
+ul.submenu li a:hover{
+  background:rgba(0,0,0,.3);
+}
+
+
+.hideBullet {
+  list-style-type:none; 
 }

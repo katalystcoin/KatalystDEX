@@ -28,6 +28,46 @@
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
   <link href="css/bootstrap-4.0.0.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <style> 
+  /*hide the inputs*/
+      input.menu{display:none}
+
+      /*show the second levele menu of the selected voice*/
+      input:checked ~ ul.submenu{
+        max-height:700px;
+        transition:max-height 0.5s ease-in;
+      }
+
+      /*style for the second level menu*/
+      ul.submenu{
+        max-height:0;
+        padding:0;
+        overflow:hidden;
+        list-style-type:none;
+        background:#444;
+        box-shadow:0 0 1px rgba(0,0,0,.3);
+        transition:max-height 0.5s ease-out;
+        position:absolute;
+        min-width:100%;
+      }
+
+      ul.submenu li a{
+        display:block;
+        padding:12px;
+        color:#ddd;
+        text-decoration:none;
+        box-shadow:0 -1px rgba(0,0,0,.5) inset;
+        transition:background .3s;
+        white-space:nowrap;
+      }
+
+      ul.submenu li a:hover{
+        background:rgba(0,0,0,.3);
+      }
+  </style>
+<!--   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
   <!-- CSS END -->
   <link href="img/favicon.ico" type="image/x-icon" rel="shortcut icon">
 </head>

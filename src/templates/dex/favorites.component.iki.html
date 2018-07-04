@@ -1,0 +1,24 @@
+<h2>Exchange Pairs IKI</h2>
+
+<div class="pairs-list verticalText">
+
+    <button onclick="dropFn2()" class="dropbtn pairFlex">
+      <img class="imgCoin grid-item" src="img/IKI.png" />
+      <p class="grid-item">IKI</p>
+    </button>
+
+
+    <div id="myDropdown2" class="dropdown-content">
+          <div class="pair minW pairFlex"
+               ng-repeat="p in $ctrl.pairs"
+               ng-show="p.amountAsset.shortName == 'IKI' " 
+               ng-click="$ctrl.onClick(p)"> 
+               
+               <img class="imgCoin grid-item" src="img/{{p.priceAsset.shortName}}.png" />
+               <div class="grid-item">{{p.priceAsset.displayName}} </div>
+
+          </div>
+    </div>
+</div>
+
+
