@@ -57,6 +57,7 @@ waves-dex-favorites {
   width: 40px;
   height: 40px;
   margin: 3px;
+  margin-right: 10px;
 }
 
 .minW {
@@ -132,9 +133,14 @@ input.menu {
   padding: 3px;
 }
 
-input.menu:checked + .menu{
+input.menu:checked {
   background: @color-button-border;
 }
+
+input[type=checkbox]:checked + menu {
+  color: @color-success-green;
+} 
+
 
 /*show the second levele menu of the selected voice*/
 input:checked ~ ul.submenu{
@@ -152,12 +158,13 @@ ul.submenu{
   box-shadow:0 0 1px rgba(0,0,0,.3);
   transition:max-height 0.5s ease-out;
   position:absolute;
-  min-width:270px;
+  min-width:250px;
 }
 
 ul.submenu li:hover {
   background: @color-table-row-odd;
-  min-width:270px;
+  min-width:250px;
+  cursor: pointer;
 }
 
 ul.submenu li a{
@@ -177,4 +184,20 @@ ul.submenu li a:hover{
 
 .hideBullet {
   list-style-type:none; 
+}
+
+.hideBullet:checked {
+  background: @color-table-row-odd;
+}
+
+
+.hideBullet:hover {
+  background: @color-table-row-odd;
+  cursor: pointer;
+  max-width:250px
+}
+
+.excess {
+  margin-bottom: 50px;
+  visibility: hidden;
 }
