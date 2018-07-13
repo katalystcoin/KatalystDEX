@@ -378,22 +378,22 @@ module.exports = function (grunt) {
                 dest: 'distr/devel/js/bundle.js'
             }
         },
-        // uglify: {
-        //     options: {
-        //         mangle: false
-        //     },
-        //     distr: {
-        //         files: {
-        //             'distr/<%= pkg.name %>-<%= meta.configurations.testnet.name %>-<%= pkg.version %>.min.js': ['distr/<%= pkg.name %>-<%= meta.configurations.testnet.name %>-<%= pkg.version %>.js'],
-        //             'distr/<%= pkg.name %>-<%= meta.configurations.mainnet.name %>-<%= pkg.version %>.min.js': ['distr/<%= pkg.name %>-<%= meta.configurations.mainnet.name %>-<%= pkg.version %>.js'],
-        //             'distr/<%= pkg.name %>-<%= meta.configurations.devnet.name %>-<%= pkg.version %>.min.js': ['distr/<%= pkg.name %>-<%= meta.configurations.devnet.name %>-<%= pkg.version %>.js'],
-        //             'distr/<%= pkg.name %>-<%= meta.configurations.chrome.mainnet.name %>-<%= pkg.version %>.min.js': ['distr/<%= pkg.name %>-<%= meta.configurations.chrome.mainnet.name %>-<%= pkg.version %>.js'],
-        //             'distr/<%= pkg.name %>-<%= meta.configurations.chrome.testnet.name %>-<%= pkg.version %>.min.js': ['distr/<%= pkg.name %>-<%= meta.configurations.chrome.testnet.name %>-<%= pkg.version %>.js'],
-        //             'distr/<%= pkg.name %>-<%= meta.configurations.desktop.mainnet.name %>-<%= pkg.version %>.min.js': ['distr/<%= pkg.name %>-<%= meta.configurations.desktop.mainnet.name %>-<%= pkg.version %>.js'],
-        //             'distr/<%= pkg.name %>-<%= meta.configurations.desktop.testnet.name %>-<%= pkg.version %>.min.js': ['distr/<%= pkg.name %>-<%= meta.configurations.desktop.testnet.name %>-<%= pkg.version %>.js']
-        //         }
-        //     }
-        // },
+        uglify: {
+            options: {
+                mangle: false
+            },
+            distr: {
+                files: {
+                    'distr/<%= pkg.name %>-<%= meta.configurations.testnet.name %>-<%= pkg.version %>.min.js': ['distr/<%= pkg.name %>-<%= meta.configurations.testnet.name %>-<%= pkg.version %>.js'],
+                    'distr/<%= pkg.name %>-<%= meta.configurations.mainnet.name %>-<%= pkg.version %>.min.js': ['distr/<%= pkg.name %>-<%= meta.configurations.mainnet.name %>-<%= pkg.version %>.js'],
+                    'distr/<%= pkg.name %>-<%= meta.configurations.devnet.name %>-<%= pkg.version %>.min.js': ['distr/<%= pkg.name %>-<%= meta.configurations.devnet.name %>-<%= pkg.version %>.js'],
+                    'distr/<%= pkg.name %>-<%= meta.configurations.chrome.mainnet.name %>-<%= pkg.version %>.min.js': ['distr/<%= pkg.name %>-<%= meta.configurations.chrome.mainnet.name %>-<%= pkg.version %>.js'],
+                    'distr/<%= pkg.name %>-<%= meta.configurations.chrome.testnet.name %>-<%= pkg.version %>.min.js': ['distr/<%= pkg.name %>-<%= meta.configurations.chrome.testnet.name %>-<%= pkg.version %>.js'],
+                    'distr/<%= pkg.name %>-<%= meta.configurations.desktop.mainnet.name %>-<%= pkg.version %>.min.js': ['distr/<%= pkg.name %>-<%= meta.configurations.desktop.mainnet.name %>-<%= pkg.version %>.js'],
+                    'distr/<%= pkg.name %>-<%= meta.configurations.desktop.testnet.name %>-<%= pkg.version %>.min.js': ['distr/<%= pkg.name %>-<%= meta.configurations.desktop.testnet.name %>-<%= pkg.version %>.js']
+                }
+            }
+        },
         clean: ['build/**', 'distr/**'],
         copy: {
             options: {
