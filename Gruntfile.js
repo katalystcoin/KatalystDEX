@@ -633,7 +633,7 @@ module.exports = function (grunt) {
 
     grunt.registerTask('build', [
         'build-local',
-        'jscs',
+        // 'jscs',
         'jshint',
         'karma:development',
         'postcss',
